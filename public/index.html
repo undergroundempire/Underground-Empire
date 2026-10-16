@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Underground Empire</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #101010;
+      color: white;
+    }
+
+    header {
+      background: #080808;
+      padding: 22px 15px;
+      text-align: center;
+      border-bottom: 2px solid #00e676;
+    }
+
+    header h1 {
+      color: #00e676;
+      font-size: 28px;
+    }
+
+    nav {
+      padding: 15px;
+      text-align: center;
+      background: #181818;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 14px;
+    }
+
+    .hero {
+      min-height: 65vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 25px;
+      background: linear-gradient(135deg, #111, #193b29, #050505);
+    }
+
+    .hero h2 {
+      font-size: 38px;
+      color: #00e676;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      font-size: 17px;
+      line-height: 1.7;
+      color: #ddd;
+      max-width: 500px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 13px 25px;
+      background: #00e676;
+      color: #000;
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      color: #00e676;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: #1b1b1b;
+      border: 1px solid #333;
+      padding: 25px;
+      margin: 15px auto;
+      max-width: 450px;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 22px;
+      background: #080808;
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    @media (max-width: 480px) {
+      .hero h2 {
+        font-size: 30px;
+      }
+
+      nav a {
+        margin: 0 5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>UNDERGROUND EMPIRE</h1>
+    <p>Welcome to Our Official Website</p>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero" id="home">
+    <h2>WELCOME TO THE EMPIRE</h2>
+    <p>
+      Discover Underground Empire.
+      A bold identity, a unique vision,
+      and a new digital experience.
+    </p>
+    <a class="btn" href="#about">Explore More</a>
+  </section>
+
+  <section class="section" id="about">
+    <h2>ABOUT US</h2>
+    <div class="card">
+      <p>
+        Welcome to Underground Empire!
+        This is our official website.
+        Stay connected for updates and news.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>CONTACT US</h2>
+    <div class="card">
+      <p>For enquiries and information, contact us.</p>
+      <a class="btn" href="mailto:contact@example.com">
+        Email Us
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p
