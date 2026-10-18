@@ -7,27 +7,32 @@
   position: relative;
   overflow: hidden;
 }
-
-.hero::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 48%;
-  height: 100%;
-  background-image: url("assets/Bohee.jpg");
+.hero {
+  position: relative;
+  overflow: hidden;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url("assets/Bohee.jpg");
   background-size: cover;
-  background-position: center top;
-  opacity: 0.9;
-  -webkit-mask-image: linear-gradient(to right, transparent, black 30%);
-  mask-image: linear-gradient(to right, transparent, black 30%);
-  pointer-events: none;
+  background-position: center 30%;
 }
 
-.hero-shade,
+.hero::before {
+  content: none;
+}
+
+.hero-shade {
+  z-index: 0;
+}
+
 .hero-copy,
 .hero-side,
 .hero-crown {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
