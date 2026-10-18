@@ -66,6 +66,20 @@ button { cursor: pointer; }
   line-height: 1;
   text-shadow: 0 0 16px #ff002e66;
 }
+
+.crown {
+    animation: crownRotate 4s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes crownRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
 .topbar nav { height: 100%; display: flex; align-items: center; gap: 4px; }
 .topbar nav a {
   height: 100%;
