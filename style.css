@@ -1,4 +1,4 @@
-
+mm
 :root {
   --bg: #07090c;
   --panel: #0d1117;
@@ -1126,5 +1126,63 @@ video {
 
   .admin-panel {
     max-width: 94%;
+  }
+  
+/* FINAL MOBILE LAYOUT FIX */
+@media screen and (max-width: 720px) {
+  .hero {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 45px 12px !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  .hero-copy {
+    padding: 12px 0 !important;
+    text-align: center !important;
+  }
+
+  .hero h1 {
+    font-size: clamp(30px, 8vw, 48px) !important;
+    line-height: 1 !important;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-sub {
+    font-size: 18px !important;
+  }
+
+  .hero-links {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    font-size: 10px !important;
+  }
+
+  .quick-links {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    padding: 12px !important;
+    gap: 10px !important;
+  }
+
+  .quick-card {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .content-section {
+    padding: 24px 14px !important;
+    min-height: 120px !important;
+  }
+
+  .section-head {
+    flex-wrap: wrap !important;
+  }
+
+  .section-head h2 {
+    font-size: 18px !important;
   }
 }
