@@ -1015,4 +1015,116 @@ select:focus {
   .quick-card strong {
     display: block;
   }
-   }
+   
+/* MOBILE SCREEN FIX */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+@media (max-width: 720px) {
+  .topbar {
+    width: 100%;
+    max-width: 100%;
+    padding: 0 10px;
+    gap: 6px;
+  }
+
+  .brand {
+    min-width: 0;
+    font-size: 15px;
+    gap: 6px;
+  }
+
+  .brand small {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
+  .top-actions {
+    flex-shrink: 0;
+    gap: 5px;
+  }
+
+  .hero {
+    width: 100%;
+    min-height: 300px;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .hero-copy {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px 10px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 9vw, 52px);
+    line-height: .95;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-sub {
+    font-size: clamp(16px, 4.5vw, 23px);
+  }
+
+  .hero-links {
+    font-size: 8px;
+    letter-spacing: 1px;
+    overflow-wrap: anywhere;
+  }
+
+  .quick-links {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .quick-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .content-section {
+    width: 100%;
+    min-width: 0;
+    padding: 20px 12px;
+  }
+
+  .section-head {
+    gap: 8px;
+  }
+
+  .section-head h2 {
+    min-width: 0;
+    font-size: 15px;
+  }
+
+  .media-grid {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .footer {
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 20px 12px;
+  }
+
+  .admin-panel {
+    max-width: 94%;
+  }
+}
