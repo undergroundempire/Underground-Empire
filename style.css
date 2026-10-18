@@ -527,21 +527,3 @@ button { cursor: pointer; }
     max-width: 100%;
     overflow-x: hidden;
   }
-/* Golden Crown Spinning Animation */
-.crown,
-.brand .crown,
-.brand-logo .crown {
-    display: inline-block !important;
-    animation: goldenCrownSpin 3s linear infinite !important;
-    transform-origin: center center;
-    will-change: transform;
-}
-
-@keyframes goldenCrownSpin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
