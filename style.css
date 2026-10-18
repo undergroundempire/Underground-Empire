@@ -443,3 +443,39 @@ button { cursor: pointer; }
   .quick-card { min-height: 55px; }
   .quick-card strong { display: block; }
  }
+/* Mobile banner fix */
+@media (max-width: 600px) {
+  .hero {
+    width: 100%;
+    max-width: 100%;
+    min-height: 260px;
+    height: auto;
+    box-sizing: border-box;
+    padding: 30px 14px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .hero-copy,
+  .hero-side,
+  .hero-crown {
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+  }
+
+  .hero h1 {
+    font-size: clamp(28px, 8vw, 42px);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
