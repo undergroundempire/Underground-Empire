@@ -1,4 +1,18 @@
-.hero{display:none!important}*{box-sizing:border-box}
+.
+.hero{
+  display:flex !important;
+  min-height:315px;
+  position:relative;
+  overflow:hidden;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background-image:url("./Bohee.jpg") !important;
+  background-size:contain !important;
+  background-position:center center !important;
+  background-repeat:no-repeat !important;
+  background-color:#07090c;
+}}
 html{scroll-behavior:smooth;scroll-padding-top:82px}
 body{margin:0;max-width:100%;overflow-x:hidden;background:radial-gradient(ellipse at 50% 0%,#151a20 0,#07090c 50%);color:var(--text);font-family:Inter,Arial,sans-serif;font-size:14px}
 a{color:inherit;text-decoration:none}
