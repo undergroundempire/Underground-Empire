@@ -161,3 +161,7 @@ html,body{max-width:100%;overflow-x:hidden}
 .modal{padding:12px}
 .modal-card{padding:25px 20px}
 }
+/* REMOVE HOME PAGE BANNER */
+.hero {
+  display: none !important;
+}
