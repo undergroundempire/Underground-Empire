@@ -161,3 +161,41 @@ html,body{max-width:100%;overflow-x:hidden}
 .modal{padding:12px}
 .modal-card{padding:25px 20px}
 }
+/* ===== BOHEE.jpg BANNER FIX ===== */
+
+.hero {
+background-color: #07090c !important;
+background-image:
+linear-gradient(
+90deg,
+rgba(7, 9, 12, 0.15),
+rgba(7, 9, 12, 0.35)
+),
+url("./Bohee.jpg") !important;
+background-size: cover !important;
+background-position: center center !important;
+background-repeat: no-repeat !important;
+overflow: hidden;
+}
+
+.hero-shade {
+background: transparent !important;
+}
+
+@media (max-width: 720px) {
+.hero {
+background-image:
+linear-gradient(
+90deg,
+rgba(7, 9, 12, 0.20),
+rgba(7, 9, 12, 0.40)
+),
+url("./Bohee.jpg") !important;
+background-size: cover !important;
+background-position: center center !important;
+background-repeat: no-repeat !important;
+}
+}
+
+/* ===== END BANNER FIX ===== */
+
