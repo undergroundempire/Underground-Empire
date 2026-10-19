@@ -161,22 +161,3 @@ html,body{max-width:100%;overflow-x:hidden}
 .modal{padding:12px}
 .modal-card{padding:25px 20px}
 }
-/* BOHEE BANNER RED EFFECT FIX */
-.hero::before,
-.hero::after,
-.hero .hero-shade {
-  display: none !important;
-}
-
-.hero {
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(7, 9, 12, 0.08),
-      rgba(7, 9, 12, 0.08)
-    ),
-    url("./Bohee.jpg") !important;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-  background-size: cover !important;
-}
