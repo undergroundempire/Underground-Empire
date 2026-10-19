@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090c">
+  <meta name="description" content="Underground Empire — music, videos, photos and underground culture.">
+  <title>Underground Empire | Official</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#" aria-label="Underground Empire home"><span class="crown">♛</span><span>UNDERGROUND <b>EMPIRE</b><small>BOHEE VEXER & FLEXER</small></span></a>
+  <nav><a class="active" href="#home">⌂ Home</a><a href="#songs">♫ MP3 Songs</a><a href="#videos">▣ Videos</a><a href="#photos">▧ Photos</a></nav>
+  <div class="top-actions"><input id="search" type="search" placeholder="Search music..." aria-label="Search media"><button class="outline-btn" id="loginOpen">♟ Admin Login</button><button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button></div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="hero-shade"></div>
+    <div class="hero-copy"><div class="hero-crown">♛</div><p class="eyebrow">REAL MUSIC · REAL VIBES · NO LIMITS</p><h1>UNDERGROUND<br><em>EMPIRE</em></h1><p class="hero-sub">Bohee Vexer & Flexer</p><div class="hero-links">MUSIC <i>/</i> VIDEOS <i>/</i> PHOTOS <i>/</i> UNDERGROUND CULTURE</div></div>
+    <div class="hero-side">SUPPORT<br>UNDERGROUND<br>ARTISTS</div>
+  </section>
+
+  <section class="quick-links">
+    <a href="#songs" class="quick-card"><span class="quick-icon">♫</span><span><b>MP3 SONGS</b><small>Latest & trending songs</small></span><strong>→</strong></a>
+    <a href="#videos" class="quick-card"><span class="quick-icon">▶</span><span><b>VIDEOS</b><small>Music videos & more</small></span><strong>→</strong></a>
+    <a href="#photos" class="quick-card"><span class="quick-icon">▧</span><span><b>PHOTOS</b><small>Exclusive gallery</small></span><strong>→</strong></a>
+  </section>
+
+  <section class="content-section" id="songs">
+    <div class="section-head"><h2><span>♫</span> Latest MP3 Songs</h2><button class="text-btn" data-view="songs">View all →</button></div>
+    <div class="media-grid song-grid" id="songGrid"></div>
+  </section>
+  <section class="content-section" id="videos">
+    <div class="section-head"><h2><span>▶</span> Latest Videos</h2><button class="text-btn" data-view="videos">View all →</button></div>
+    <div class="media-grid video-grid" id="videoGrid"></div>
+  </section>
+  <section class="content-section" id="photos">
+    <div class="section-head"><h2><span>▧</span> Latest Photos</h2><button class="text-btn" data-view="photos">View all →</button></div>
+    <div class="media-grid photo-grid" id="photoGrid"></div>
+  </section>
+  <section class="empty-state hidden" id="emptyState">No media found. Try another search.</section>
+</main>
+
+<footer class="footer">
+  <a class="brand footer-brand" href="#"><span class="crown">♛</span><span>UNDERGROUND <b>EMPIRE</b><small>Bohee Vexer & Flexer</small></span></a>
+  <p>“Music is not just sound,<br>it’s a lifestyle.”</p>
+  <div class="socials"><a href="#" aria-label="YouTube">▶</a><a href="#" aria-label="Instagram">◎</a><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="TikTok">♪</a></div>
+  <small>© <span id="year"></span> Underground Empire. All rights reserved.</small>
+</footer>
+
+<div class="modal hidden" id="loginModal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+  <div class="modal-card"><button class="modal-close" id="loginClose" aria-label="Close">×</button><div class="modal-logo">♛</div><h2 id="loginTitle">ADMIN <em>LOGIN</em></h2><p class="muted">Manage your Underground Empire media</p>
+    <form id="loginForm"><label for="username">Username / Email</label><input id="username" autocomplete="username" required placeholder="Admin username"><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required placeholder="Enter password"><button class="primary-btn full" type="submit">Login to dashboard</button><p class="form-message" id="loginMessage"></p></form>
+    <p class="demo-note" id="demoNote">Demo preview login: <b>admin</b> / <b>Empire@2026</b></p>
+  </div>
+</div>
+
+<div class="admin-panel hidden" id="adminPanel">
+  <div class="admin-head"><div><span class="status-dot"></span> ADMIN PANEL <small>Underground Empire</small></div><button id="logoutBtn" class="outline-btn">Logout ↗</button></div>
+  <div class="admin-body"><div><h2>Upload Media</h2><p class="muted">Add a song, video, or photo to your website.</p>
+    <form id="uploadForm" class="upload-form">
+      <label for="mediaType">Media type</label><select id="mediaType"><option value="songs">MP3 Song</option><option value="videos">Video</option><option value="photos">Photo</option></select>
+      <label for="mediaTitle">Title</label><input id="mediaTitle" required maxlength="90" placeholder="e.g. Dark Side">
+      <label for="artist">Artist / Description</label><input id="artist" maxlength="90" placeholder="e.g. Bohee Vexer">
+      <label for="mediaFile">Choose file</label><input id="mediaFile" type="file" required accept=".mp3,.wav,.m4a,.mp4,.webm,.mov,.jpg,.jpeg,.png,.webp">
+      <label for="coverFile">Cover image (optional)</label><input id="coverFile" type="file" accept="image/png,image/jpeg,image/webp">
+      <button class="primary-btn full" type="submit">＋ Upload Media</button><p class="form-message" id="uploadMessage"></p>
+    </form></div>
+    <div><h2>Manage Media</h2><p class="muted">Delete demo uploads or media stored in your connected backend.</p><div id="manageList" class="manage-list"></div></div>
+  </div>
+  <div class="storage-warning" id="storageWarning">Demo mode: files are saved only in this browser. Connect Supabase for shared, permanent online uploads.</div>
+</div>
+<div class="toast hidden" id="toast"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="app.js"></script>
+</body>
+</html>
