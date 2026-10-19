@@ -657,4 +657,28 @@ button { cursor: pointer; }
   .quick-links { grid-template-columns: 1fr; }
   .quick-card { min-height: 52px; }
   .quick-card strong { display: block; }
+  
+/* FIX FULL BANNER WIDTH ON MOBILE AND DESKTOP */
+.hero {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  background-size: contain !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-color: #07090c !important;
+}
+
+@media (max-width: 720px) {
+  .hero {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    aspect-ratio: 16 / 9 !important;
+    max-height: none !important;
+    background-size: 100% auto !important;
+    background-position: center center !important;
+  }
+
    }
