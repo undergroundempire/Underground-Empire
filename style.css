@@ -180,3 +180,20 @@ html,body{max-width:100%;overflow-x:hidden}
 .manage-item{gap:7px;padding:7px}
 .delete-btn{padding:6px;font-size:9px}
                  }
+.hero-banner {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+}
+
+.banner-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
