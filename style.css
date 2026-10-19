@@ -180,3 +180,27 @@ html,body{max-width:100%;overflow-x:hidden}
 .manage-item{gap:7px;padding:7px}
 .delete-btn{padding:6px;font-size:9px}
   }
+/* BOHEE BANNER IMAGE FIX */
+.hero {
+position: relative;
+min-height: 520px;
+overflow: hidden;
+background-image:
+linear-gradient(
+90deg,
+rgba(7, 9, 12, 0.82),
+rgba(7, 9, 12, 0.25)
+),
+url("assets/Bohee.jpg");
+background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
+}
+
+@media (max-width: 600px) {
+.hero {
+min-height: 430px;
+background-position: center center;
+background-size: cover;
+}
+
