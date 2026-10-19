@@ -658,27 +658,29 @@ button { cursor: pointer; }
   .quick-card { min-height: 52px; }
   .quick-card strong { display: block; }
   
-/* FIX FULL BANNER WIDTH ON MOBILE AND DESKTOP */
+/* FINAL FIX - FULL BANNER WIDTH */
 .hero {
+  display: flex !important;
   width: 100% !important;
   max-width: 100% !important;
-  min-width: 0 !important;
-  box-sizing: border-box !important;
-  background-size: contain !important;
-  background-position: center center !important;
+  min-height: 0 !important;
+  height: auto !important;
+  aspect-ratio: 16 / 9 !important;
+  overflow: hidden !important;
+  background-image: url("./Bohee.jpg") !important;
+  background-size: 100% 100% !important;
+  background-position: center !important;
   background-repeat: no-repeat !important;
-  background-color: #07090c !important;
+  box-sizing: border-box !important;
 }
 
-@media (max-width: 720px) {
+@media screen and (max-width: 720px) {
   .hero {
-    width: 100% !important;
-    height: auto !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
     min-height: 0 !important;
+    height: auto !important;
     aspect-ratio: 16 / 9 !important;
-    max-height: none !important;
-    background-size: 100% auto !important;
-    background-position: center center !important;
+    background-size: 100% 100% !important;
   }
-
-   }
+}
