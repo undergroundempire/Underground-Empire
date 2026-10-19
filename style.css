@@ -1,11 +1,11 @@
-
+ko
 /* UNDERGROUND EMPIRE — COMPLETE RESPONSIVE CSS */
 :root {
   --bg: #07090c;
   --panel: #0d1117;
   --panel2: #111820;
   --line: #28313b;
-  --red: #f20d2b;
+  --red #f20d2b;
   --red2: #b80d22;
   --text: #f3f5f8;
   --muted: #9aa5b2;
@@ -658,29 +658,25 @@ button { cursor: pointer; }
   .quick-card { min-height: 52px; }
   .quick-card strong { display: block; }
   
-/* FINAL FIX - FULL BANNER WIDTH */
-.hero {
-  display: flex !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  min-height: 0 !important;
-  height: auto !important;
-  aspect-ratio: 16 / 9 !important;
-  overflow: hidden !important;
-  background-image: url("./Bohee.jpg") !important;
-  background-size: 100% 100% !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  box-sizing: border-box !important;
-}
-
-@media screen and (max-width: 720px) {
+/* BOHEE MOBILE BANNER FIX */
+@media (max-width: 720px) {
   .hero {
-    width: 100vw !important;
-    max-width: 100vw !important;
-    min-height: 0 !important;
+    width: 100% !important;
     height: auto !important;
+    min-height: 0 !important;
     aspect-ratio: 16 / 9 !important;
-    background-size: 100% 100% !important;
+    max-height: none !important;
+    overflow: hidden !important;
+    background-image: url("./Bohee.jpg") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .hero-copy,
+  .hero-crown,
+  .hero-side,
+  .hero-shade {
+    display: none !important;
   }
 }
