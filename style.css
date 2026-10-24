@@ -5,7 +5,7 @@
 
 /* Responsive full photo banner */
 .photo-banner {
-  width: 100%;
+  width: 45%;
   margin: 0;
   padding: 0;
   overflow: hidden;
@@ -14,7 +14,7 @@
 
 .photo-banner img {
   display: block;
-  width: 100%;
+  width: 75%;
   height: auto;
   max-width: 100%;
   object-fit: contain;
