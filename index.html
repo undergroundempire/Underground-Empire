@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#05080b"><meta name="description" content="Underground Empire — Bohee Vexer & Flexer. Music, videos, photos and underground culture.">
+<title>Underground Empire | Bohee Vexer & Flexer</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home"><span class="crown">♛</span><span>UNDERGROUND <b>EMPIRE</b><small>Bohee Vexer &amp; Flexer</small></span></a>
+  <button class="hamburger" id="menuToggle" aria-label="Toggle menu">☰</button>
+  <nav id="mainNav"><a class="active" href="#home">⌂ <span>Home</span></a><a href="#songs">♫ <span>MP3 Songs</span></a><a href="#videos">▣ <span>Videos</span></a><a href="#photos">▧ <span>Photos</span></a></nav>
+  <div class="search"><span>⌕</span><input id="searchInput" placeholder="Search songs, videos..." aria-label="Search"></div>
+  <button class="outline" id="adminBtn">♟ Admin Login</button>
+</header>
+<main id="home" class="layout">
+<div class="maincol">
+<section class="hero">
+  <div class="hero-copy"><div class="hero-crown">♛</div><h1>UNDERGROUND<br><em>EMPIRE</em></h1><p class="artist">Bohee Vexer &amp; Flexer</p><p class="tagline">MUSIC / VIDEOS / PHOTOS / UNDERGROUND CULTURE</p></div>
+  <div class="side-words left-words">REAL MUSIC<br>REAL VIBES<br>NO LIMITS</div><div class="side-words right-words">SUPPORT<br>UNDERGROUND<br>ARTISTS</div>
+</section>
+<section class="quicklinks"><a href="#songs"><span>♫</span><div><b>MP3 SONGS</b><small>Latest &amp; Trending Songs</small></div><strong>→</strong></a><a href="#videos"><span>▶</span><div><b>VIDEOS</b><small>Music Videos &amp; More</small></div><strong>→</strong></a><a href="#photos"><span>▧</span><div><b>PHOTOS</b><small>Exclusive Gallery</small></div><strong>→</strong></a></section>
+<section class="content-section" id="songs"><div class="section-head"><h2><i>♫</i> Latest MP3 Songs</h2><a href="#songs" class="viewall">View All →</a></div><div class="media-grid song-grid" id="songGrid"></div></section>
+<section class="content-section" id="videos"><div class="section-head"><h2><i>▶</i> Latest Videos</h2><a href="#videos" class="viewall">View All →</a></div><div class="media-grid video-grid" id="videoGrid"></div></section>
+<section class="content-section" id="photos"><div class="section-head"><h2><i>▧</i> Latest Photos</h2><a href="#photos" class="viewall">View All →</a></div><div class="media-grid photo-grid" id="photoGrid"></div></section>
+<footer class="footer"><a class="brand compact" href="#home"><span class="crown">♛</span><span>UNDERGROUND <b>EMPIRE</b><small>Bohee Vexer &amp; Flexer</small></span></a><p>“Music is not just sound,<br>it’s a lifestyle.”</p><div class="social">▶　◎　f　♪　◉</div><small>© <span id="year"></span> Underground Empire. All rights reserved.</small></footer>
+</div>
+<aside class="sidebar"><div class="mobile-brand">♛ <b>UNDERGROUND <em>EMPIRE</em></b><span>☰</span></div><div class="side-hero"><div class="hood">♛</div><h2>UNDERGROUND<br><em>EMPIRE</em></h2><p>Bohee Vexer &amp; Flexer</p></div>
+<div class="side-buttons"><a href="#songs"><i>♫</i><span><b>MP3 SONGS</b><small>Latest &amp; Trending Songs</small></span>›</a><a href="#videos"><i>▶</i><span><b>VIDEOS</b><small>Music Videos &amp; More</small></span>›</a><a href="#photos"><i>▧</i><span><b>PHOTOS</b><small>Exclusive Gallery</small></span>›</a></div>
+<div class="side-list"><h3>♫ Latest MP3 Songs</h3><div id="sideSongs"></div><a class="viewall" href="#songs">View All →</a></div>
+<div class="side-list"><h3>▶ Latest Videos</h3><div id="sideVideos"></div><a class="viewall" href="#videos">View All →</a></div>
+<div class="side-list"><h3>▧ Latest Photos</h3><div class="mini-photos" id="sidePhotos"></div><a class="viewall" href="#photos">View All →</a></div>
+<div class="side-footer"><b>♛ UNDERGROUND <em>EMPIRE</em></b><p>▶　◎　f　♪　◉</p><small>© <span class="year"></span> Underground Empire.</small></div></aside>
+</main>
+<section class="admin-panel" id="adminPanel"><div class="admin-title"><h2>♟ Admin Dashboard</h2><button id="closeAdmin" class="close">✕</button></div><p class="notice">Demo dashboard: choose media files to preview them in this browser. GitHub Pages is static hosting, so uploads are not permanently saved for all visitors. See README for a real upload backend.</p>
+<div class="admin-tabs"><button class="selected" data-tab="upload">Upload Media</button><button data-tab="manage">Manage Media</button><button data-tab="settings">Settings</button></div>
+<div id="uploadTab" class="tab-content"><div class="upload-cards">
+<label class="upload-card"><strong>♫ Upload MP3 Songs</strong><span>Click to choose audio files</span><input type="file" id="songUpload" accept="audio/*" multiple><small>MP3, WAV, OGG</small></label>
+<label class="upload-card"><strong>▶ Upload Videos</strong><span>Click to choose video files</span><input type="file" id="videoUpload" accept="video/*" multiple><small>MP4, WebM, MOV</small></label>
+<label class="upload-card"><strong>▧ Upload Photos</strong><span>Click to choose image files</span><input type="file" id="photoUpload" accept="image/*" multiple><small>JPG, PNG, WebP</small></label></div><p id="uploadStatus" role="status"></p></div>
+<div id="manageTab" class="tab-content hidden"><p>Current sample media and any selected local previews:</p><div id="manageList"></div></div>
+<div id="settingsTab" class="tab-content hidden"><label class="setting">Website title <input id="siteTitle" value="Underground Empire"></label><label class="setting">Artist name <input id="artistName" value="Bohee Vexer & Flexer"></label><button id="saveSettings" class="red-btn">Save display settings</button><p id="settingsStatus"></p></div>
+</section>
+<div id="loginModal" class="modal"><form id="loginForm" class="login-card"><button type="button" id="closeLogin" class="close">✕</button><div class="bigcrown">♛</div><h2>ADMIN LOGIN</h2><p>Demo access for website preview</p><label>Username<input id="username" autocomplete="username" placeholder="Enter username" required></label><label>Password<input id="password" type="password" autocomplete="current-password" placeholder="Enter password" required></label><button class="red-btn" type="submit">Login to Dashboard</button><small>Demo: admin / empire123</small><p id="loginError" class="error"></p></form></div>
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body></html>
