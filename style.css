@@ -23,9 +23,9 @@
 }
 
 /* Desktop: banner ki maximum height */
-@media (min-width: 76px) {
+@media (min-width: 45px) {
   .photo-banner img {
-    max-height: 45px;
+    max-height: "20px;
     object-fit: contain;
   }
 }
