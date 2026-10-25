@@ -40,3 +40,32 @@
     object-position: center;
   }
 }
+
+/* FORCE FIX - BANNER SIZE */
+.photo-banner {
+  width: 100% !important;
+  max-height: 280px !important;
+  overflow: hidden !important;
+  line-height: 0;
+}
+
+.photo-banner img {
+  display: block !important;
+  width: 100% !important;
+  height: 280px !important;
+  max-height: 280px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  margin: 0 auto !important;
+}
+
+@media (min-width: 768px) {
+  .photo-banner {
+    max-height: 380px !important;
+  }
+
+  .photo-banner img {
+    height: 380px !important;
+    max-height: 380px !important;
+  }
+}
