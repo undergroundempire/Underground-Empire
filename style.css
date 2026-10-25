@@ -39,3 +39,8 @@
     object-fit: contain;
   }
 }
+
+
+.banner-tagline {
+  text-align: center;
+}
