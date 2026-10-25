@@ -3,9 +3,8 @@
 @media(min-width:1200px){.layout{grid-template-columns:minmax(0,1fr) 235px}}@media(max-width:1050px){.brand{min-width:220px;font-size:16px}.topbar{gap:10px;padding:0 12px}.search{width:150px}.quicklinks{gap:10px;padding-left:3%;padding-right:3%}.layout{grid-template-columns:minmax(0,1fr) 210px}.media-grid{gap:10px;padding:0 2%}}@media(max-width:760px){.topbar{height:56px;border-radius:0;padding:0 10px;gap:10px}.brand{min-width:0;flex:1;font-size:14px}.brand .crown{font-size:34px}.brand small{font-size:9px}.hamburger{display:block}.topbar nav{display:none;position:absolute;top:55px;left:0;right:0;background:#060b10;border:1px solid var(--line);height:auto;flex-direction:column;align-items:stretch;padding:8px}.topbar nav.open{display:flex}.topbar nav a{padding:11px;border:0}.search{width:42px;padding:7px;justify-content:center}.search input{display:none}.search:focus-within{width:150px}.search:focus-within input{display:block}.outline{font-size:0;padding:9px}.outline:after{content:'♟';font-size:18px}.layout{display:block;padding:0 5px;margin-top:5px}.sidebar{display:none}.hero{height:275px;padding:20px 4%;background-position:center}.hero-copy{margin:auto;max-width:85%}.hero h1{font-size:clamp(40px,10vw,65px)}.hero-crown{font-size:55px}.side-words{font-size:12px}.left-words{left:2%;bottom:15px}.right-words{right:2%;top:16px}.tagline{font-size:9px;letter-spacing:1.4px}.quicklinks{gap:7px;padding:10px 7px}.quicklinks a{padding:8px;gap:6px}.quicklinks a>span{font-size:25px}.quicklinks b{font-size:10px}.quicklinks small{font-size:9px}.quicklinks strong{display:none}.content-section{padding:13px 7px}.song-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.song-grid .media-card:nth-child(n+4){display:none}.video-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.video-grid .media-card:nth-child(n+5){display:none}.photo-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.photo-grid .media-card:nth-child(n+4){display:none}.media-grid{gap:10px;padding:0 2%}.cover .cover-text{font-size:clamp(13px,3.4vw,20px)}.footer{justify-content:center;text-align:center;padding:15px}.footer .brand{flex-basis:100%;justify-content:center}.footer p{flex-basis:100%;margin:0}.footer>small{flex-basis:100%}.upload-cards{grid-template-columns:1fr}.admin-panel{margin:0 5px 15px;padding:12px}.admin-tabs{overflow:auto}.admin-tabs button{white-space:nowrap}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 
 
-/* UNDERGROUND EMPIRE - FULL PHOTO BANNER */
+/* Underground Empire compact banner */
 .photo-banner {
-  display: block;
   width: 100%;
   max-width: 100%;
   margin: 0;
@@ -17,28 +16,27 @@
 .photo-banner img {
   display: block;
   width: 100%;
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
   object-fit: contain;
-  object-position: center;
-  margin: 0;
-  padding: 0;
 }
 
-/* Mobile */
-@media screen and (max-width: 600px) {
-  .photo-banner,
+/* Mobile banner height */
+@media (max-width: 600px) {
   .photo-banner img {
     width: 100%;
-    height: auto;
+    height: 280px;
+    object-fit: contain;
+    object-position: center;
   }
 }
 
-/* Desktop */
-@media screen and (min-width: 601px) {
-  .photo-banner,
+/* Desktop banner height */
+@media (min-width: 601px) {
   .photo-banner img {
     width: 100%;
-    height: auto;
+    height: 380px;
+    object-fit: contain;
+    object-position: center;
   }
 }
