@@ -3,142 +3,211 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>UNDERGROUND EMPIRE | Bohee Official</title>
-<meta name="description" content="Official Underground Empire website of Bohee. Music, videos and photos.">
-
 <style>
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;background:#080808;color:#f5f5f5;
-  font-family:Arial,Helvetica,sans-serif
-}
-header{
-  padding:20px 12px;text-align:center;
-  background:#101010;border-bottom:1px solid #c99a32
-}
-.crown{font-size:38px;animation:glow 2s infinite alternate}
-@keyframes glow{
-  from{filter:drop-shadow(0 0 3px #b8860b)}
-  to{filter:drop-shadow(0 0 15px #ffd700)}
-}
-.logo{font-size:clamp(25px,6vw,42px);font-weight:900;letter-spacing:3px}
-.logo span{color:#e6b746}
-.subtitle{color:#aaa;letter-spacing:2px;font-size:12px;margin-top:8px}
-nav{
-  display:flex;justify-content:center;gap:22px;flex-wrap:wrap;
-  padding:15px;background:#151515;position:sticky;top:0;z-index:10
-}
-nav a{color:#f2c75c;text-decoration:none;font-weight:bold;font-size:14px}
-nav a:hover{color:white}
-main{max-width:1100px;margin:auto;padding:20px}
-.banner{
-  width:100%;min-height:240px;max-height:540px;
-  border:1px solid #b58b2a;border-radius:12px;
-  overflow:hidden;background:#151515
-}
-.banner img{display:block;width:100%;height:auto;max-height:540px;object-fit:cover}
-.hero{text-align:center;padding:30px 10px}
-.hero h1{font-size:clamp(25px,5vw,44px);margin:0 0 12px}
-.gold{color:#e7b744}
-.hero p{color:#bbb;line-height:1.7}
-.btn{
-  display:inline-block;margin:8px;padding:12px 20px;
-  border-radius:5px;background:#d5a62f;color:#111;
-  text-decoration:none;font-weight:bold
-}
-section.content{
-  margin:28px 0;padding:22px;background:#111;
-  border:1px solid #292929;border-radius:10px
-}
-h2{color:#e7b744;border-bottom:1px solid #393020;padding-bottom:12px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}
-.card{padding:18px;background:#191919;border:1px solid #333;border-radius:8px}
-.card h3{margin-top:0}
-.card p{color:#bbb;line-height:1.6}
-.card a{color:#edc65d}
-footer{text-align:center;padding:28px 12px;color:#999;background:#101010;border-top:1px solid #59451d}
-@media(max-width:480px){
-  nav{gap:15px}
-  nav a{font-size:12px}
-  main{padding:12px}
-  section.content{padding:15px}
-}
+body{margin:0;background:#090909;color:#eee;font-family:Arial,sans-serif}
+header{text-align:center;padding:25px 10px;background:#111;border-bottom:1px solid #c9a13b}
+.crown{font-size:42px;animation:glow 2s infinite alternate}
+@keyframes glow{to{filter:drop-shadow(0 0 14px gold)}}
+h1{font-size:clamp(24px,6vw,40px);margin:8px}
+.gold{color:#e8bd4e}
+nav{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;padding:15px;background:#171717}
+a{color:#e8bd4e}
+nav a{text-decoration:none;font-weight:bold}
+main{max-width:950px;margin:auto;padding:16px}
+.banner img{width:100%;height:auto;max-height:500px;object-fit:cover;border-radius:8px}
+.intro{text-align:center;padding:25px 0}
+.panel,.content{background:#141414;border:1px solid #393020;border-radius:10px;padding:18px;margin:22px 0}
+input,select{width:100%;padding:12px;margin:7px 0 14px;background:#080808;color:white;border:1px solid #806626;border-radius:5px}
+button,.btn{padding:11px 16px;background:#d9ad3e;color:#111;border:0;border-radius:5px;font-weight:bold;cursor:pointer;margin:5px 3px}
+h2{color:#e8bd4e}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
+.item{background:#202020;padding:12px;border-radius:7px;overflow-wrap:anywhere}
+.item img{width:100%;height:auto;border-radius:5px}
+.item a{display:inline-block;margin-top:8px}
+.small{font-size:12px;color:#aaa;line-height:1.6}
+footer{text-align:center;padding:25px;color:#aaa;border-top:1px solid #332a17}
+.hidden{display:none}
 </style>
 </head>
-
 <body>
 <header>
-  <div class="crown">👑</div>
-  <div class="logo">UNDERGROUND <span>EMPIRE</span></div>
-  <div class="subtitle">BOHEE VEXER &amp; FLEXER</div>
+<div class="crown">👑</div>
+<h1>UNDERGROUND <span class="gold">EMPIRE</span></h1>
+<p>BOHEE VEXER &amp; FLEXER</p>
 </header>
-
 <nav>
-  <a href="#home">HOME</a>
-  <a href="#music">MUSIC</a>
-  <a href="#videos">VIDEOS</a>
-  <a href="#photos">PHOTOS</a>
+<a href="#home">HOME</a><a href="#music">MUSIC</a>
+<a href="#videos">VIDEOS</a><a href="#photos">PHOTOS</a>
+<a href="#admin">ADMIN</a>
 </nav>
 
 <main id="home">
-  <div class="banner">
-    <img src="./Bohee.jpg" alt="Bohee Official Banner">
-  </div>
+<div class="banner"><img src="./Bohee.jpg" alt="Bohee Official Banner"></div>
+<div class="intro">
+<h2>REAL MUSIC • REAL VIBES • NO LIMITS</h2>
+<p>Welcome to Underground Empire — Bohee Official</p>
+<a class="btn" href="https://youtube.com/@boheeofficial" target="_blank" rel="noopener">YouTube Channel</a>
+</div>
 
-  <div class="hero">
-    <h1>WELCOME TO <span class="gold">UNDERGROUND EMPIRE</span></h1>
-    <p>REAL MUSIC • REAL VIBES • NO LIMITS • UNDERGROUND CULTURE</p>
-    <a class="btn" href="#music">LISTEN TO MUSIC</a>
-    <a class="btn" href="#videos">WATCH VIDEOS</a>
-  </div>
+<section class="content" id="music">
+<h2>🎵 MUSIC</h2><div class="grid" id="musicList">
+<div class="item"><h3>Checkmate</h3><a href="https://youtube.com/@boheeofficial" target="_blank" rel="noopener">Listen on YouTube</a></div>
+</div>
+</section>
 
-  <section class="content" id="music">
-    <h2>🎵 MUSIC</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>CHECKMATE</h3>
-        <p>Bohee Official — Official Release</p>
-        <a href="https://youtube.com/@boheeofficial" target="_blank" rel="noopener">Listen on YouTube</a>
-      </div>
-      <div class="card">
-        <h3>My Music</h3>
-        <p>Discover more music and releases.</p>
-        <a href="https://open.spotify.com/artist/4DmqbiUFrK0QehFuaCbHlI" target="_blank" rel="noopener">Listen on Spotify</a>
-      </div>
-    </div>
-  </section>
+<section class="content" id="videos">
+<h2>▶ VIDEOS</h2><div class="grid" id="videoList">
+<div class="item"><a href="https://youtube.com/@boheeofficial" target="_blank" rel="noopener">Bohee Official Videos</a></div>
+</div>
+</section>
 
-  <section class="content" id="videos">
-    <h2>▶ VIDEOS</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Official YouTube Channel</h3>
-        <p>Watch music videos and latest updates.</p>
-        <a href="https://youtube.com/@boheeofficial" target="_blank" rel="noopener">Watch Videos</a>
-      </div>
-    </div>
-  </section>
+<section class="content" id="photos">
+<h2>📸 PHOTOS</h2><div class="grid" id="photoList">
+<div class="item"><img src="./Bohee.jpg" alt="Bohee Official"></div>
+</div>
+</section>
 
-  <section class="content" id="photos">
-    <h2>📸 PHOTOS</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Bohee Official</h3>
-        <p>Official artist photo gallery.</p>
-        <img src="./Bohee.jpg" alt="Bohee" style="width:100%;height:auto;border-radius:6px">
-      </div>
-    </div>
-  </section>
+<section class="panel" id="admin">
+<h2>🔐 ADMIN PANEL</h2>
+<div id="login">
+<p class="small">Admin login</p>
+<label>Username</label>
+<input id="username" autocomplete="username" placeholder="Enter username">
+<label>Password</label>
+<input id="password" type="password" autocomplete="current-password" placeholder="Enter password">
+<button onclick="login()">LOGIN</button>
+<p id="loginMsg" class="small"></p>
+</div>
+
+<div id="dashboard" class="hidden">
+<h3 class="gold">Welcome, Admin</h3>
+<label>Content type</label>
+<select id="kind">
+<option value="music">Song</option>
+<option value="video">YouTube Video</option>
+<option value="photo">Photo URL</option>
+</select>
+<label>Title</label>
+<input id="itemTitle" placeholder="Enter title">
+<label>Link / URL</label>
+<input id="itemUrl" placeholder="https://...">
+<button onclick="addItem()">ADD CONTENT</button>
+<button onclick="logout()">LOG OUT</button>
+<p class="small">Added items are saved only in this browser. This is not secure authentication; do not use sensitive passwords here.</p>
+<p id="adminMsg" class="small"></p>
+<div id="manageList"></div>
+</div>
+</section>
 </main>
-
 <footer>
-  <p>👑 UNDERGROUND EMPIRE</p>
-  <p>Bohee Vexer &amp; Flexer</p>
-  <p>© 2026 Underground Empire. All rights reserved.</p>
-  <a style="color:#e7b744" href="https://youtube.com/@boheeofficial" target="_blank" rel="noopener">YouTube — Bohee Official</a>
+<p>👑 UNDERGROUND EMPIRE</p>
+<p>© 2026 Bohee Official</p>
 </footer>
 
+<script>
+/*
+DEMO ONLY:
+A password stored in browser JavaScript is NOT secure.
+Use a real authentication service before using this on a public site.
+*/
+const ADMIN_USER = "undergroundempire@bohee";
+const ADMIN_PASS = "Bohee@123";
+const STORAGE_KEY = "ue_content_v1";
+
+function getItems(){
+ try{return JSON.parse(localStorage.getItem(STORAGE_KEY)||"[]")}
+ catch(e){return []}
+}
+function saveItems(items){
+ localStorage.setItem(STORAGE_KEY,JSON.stringify(items));
+}
+function login(){
+ const u=document.getElementById("username").value.trim();
+ const p=document.getElementById("password").value;
+ if(u===ADMIN_USER && p===ADMIN_PASS){
+  document.getElementById("login").classList.add("hidden");
+  document.getElementById("dashboard").classList.remove("hidden");
+  document.getElementById("loginMsg").textContent="";
+  renderAll();
+ }else{
+  document.getElementById("loginMsg").textContent="Incorrect username or password.";
+ }
+}
+function logout(){
+ document.getElementById("dashboard").classList.add("hidden");
+ document.getElementById("login").classList.remove("hidden");
+ document.getElementById("password").value="";
+}
+function safeURL(value){
+ try{
+  const u=new URL(value);
+  return u.protocol==="https:"||u.protocol==="http:" ? u.href : "";
+ }catch(e){return "";}
+}
+function addItem(){
+ const kind=document.getElementById("kind").value;
+ const title=document.getElementById("itemTitle").value.trim();
+ const url=safeURL(document.getElementById("itemUrl").value.trim());
+ const msg=document.getElementById("adminMsg");
+ if(!title||!url){msg.textContent="Title aur valid URL dono bharo.";return}
+ const items=getItems();
+ items.push({id:Date.now(),kind,title,url});
+ try{
+  saveItems(items);
+  document.getElementById("itemTitle").value="";
+  document.getElementById("itemUrl").value="";
+  msg.textContent="Content added in this browser.";
+  renderAll();
+ }catch(e){msg.textContent="Save nahi hua. Browser storage check karo."}
+}
+function removeItem(id){
+ const items=getItems().filter(x=>x.id!==id);
+ saveItems(items);renderAll();
+}
+function el(tag,cls,txt){
+ const node=document.createElement(tag);
+ if(cls)node.className=cls;
+ if(txt!==undefined)node.textContent=txt;
+ return node;
+}
+function renderAll(){
+ const configs=[
+  {kind:"music",target:"musicList"},
+  {kind:"video",target:"videoList"},
+  {kind:"photo",target:"photoList"}
+ ];
+ const items=getItems();
+ configs.forEach(c=>{
+  const box=document.getElementById(c.target);
+  box.querySelectorAll("[data-added]").forEach(n=>n.remove());
+  items.filter(x=>x.kind===c.kind).forEach(x=>{
+   const card=el("div","item");card.dataset.added="1";
+   if(c.kind==="photo"){
+    const img=el("img");img.src=x.url;img.alt=x.title;
+    img.loading="lazy";card.appendChild(img);
+   }
+   const heading=el("h3","",x.title);card.appendChild(heading);
+   if(c.kind!=="photo"){
+    const a=el("a","","Open link");a.href=x.url;
+    a.target="_blank";a.rel="noopener noreferrer";card.appendChild(a);
+   }
+   box.appendChild(card);
+  });
+ });
+ const list=document.getElementById("manageList");
+ list.replaceChildren(el("h3","","Manage added content"));
+ items.forEach(x=>{
+  const row=el("div","item",x.kind.toUpperCase()+" — "+x.title);
+  const del=el("button","","DELETE");
+  del.type="button";del.onclick=()=>removeItem(x.id);
+  row.appendChild(document.createElement("br"));row.appendChild(del);
+  list.appendChild(row);
+ });
+}
+renderAll();
+</script>
 </body>
 </html>
