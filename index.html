@@ -1,55 +1,250 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#05080b"><meta name="description" content="Underground Empire — Bohee Vexer & Flexer. Music, videos, photos and underground culture.">
-<title>Underground Empire | Bohee Vexer & Flexer</title><link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#05080b">
+<title>Underground Empire | Bohee Vexer & Flexer</title>
+
+<style>
+*{box-sizing:border-box}
+:root{--bg:#05080b;--panel:#080e13;--border:#26333d;--red:#ff1025;--white:#f4f7fa;--muted:#9baab6}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,sans-serif;font-size:14px}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer}
+.site{max-width:1450px;margin:auto;padding:0 12px}
+.topbar{height:56px;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:0 18px;border:1px solid var(--border);border-radius:10px;background:#070c11;position:sticky;top:0;z-index:10}
+.brand{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:bold;white-space:nowrap}
+.crown{font-size:38px;color:var(--red)}
+.brand em,.red{color:var(--red);font-style:normal}
+.nav{display:flex;align-items:center;gap:8px;height:100%}
+.nav a{padding:19px 14px;font-size:12px;border-bottom:3px solid transparent}
+.nav a.active,.nav a:hover{color:var(--red);border-color:var(--red)}
+.search{background:#0b131a;border:1px solid var(--border);padding:10px;border-radius:8px;color:white;width:150px}
+.btn{background:#080d12;color:white;border:1px solid var(--red);padding:10px 14px;border-radius:7px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 207px;gap:12px;margin-top:5px;align-items:start}
+main{min-width:0}
+.hero{height:285px;position:relative;overflow:hidden;border:1px solid var(--border);border-radius:8px 8px 0 0}
+.hero img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-label{position:absolute;bottom:10px;left:0;width:100%;text-align:center;letter-spacing:4px;font-size:12px;text-shadow:0 2px 6px #000}
+.quicklinks{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;padding:14px 5%;border-bottom:1px solid var(--border)}
+.quick{display:flex;align-items:center;gap:13px;padding:14px;border:1px solid var(--border);border-radius:5px;background:#080e13;min-width:0}
+.quick .symbol{font-size:30px;color:var(--red)}
+.quick strong{display:block;font-size:13px}
+.quick small{display:block;color:var(--muted);margin-top:5px;font-size:11px}
+.arrow{margin-left:auto;font-size:22px}
+.content-section{padding:18px 14px;border-bottom:1px solid var(--border)}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.section-head h2{font-size:16px;margin:0}
+.section-head h2 span{color:var(--red);margin-right:8px}
+.viewall{font-size:11px;color:var(--red)}
+.cards{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.cards.videos{grid-template-columns:repeat(4,minmax(0,1fr))}
+.media-card{min-width:0}
+.cover{aspect-ratio:1/0.78;border:1px solid #3b4a56;border-radius:4px;overflow:hidden;position:relative;background:linear-gradient(135deg,#101a22,#071016 48%,#3b0b12);display:flex;align-items:center;justify-content:center;text-align:center;padding:8px}
+.cover:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(130deg,transparent 0 22px,#ffffff08 23px 25px)}
+.cover b{font-size:clamp(12px,1.5vw,22px);font-style:italic;position:relative;text-shadow:0 2px 5px #000}
+.cover.redbg{background:linear-gradient(135deg,#30070c,#080b10,#8b101b)}
+.cover.bluebg{background:linear-gradient(135deg,#053b4a,#081018,#172a3a)}
+.cover.greybg{background:linear-gradient(135deg,#283039,#080b10,#5b5c60)}
+.cover.goldbg{background:linear-gradient(135deg,#673e22,#11151a,#9c5229)}
+.play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);border-radius:50%;background:#000b;color:white;padding:12px;font-size:20px}
+.media-title{font-size:11px;margin-top:7px;line-height:1.4}
+.media-sub{font-size:10px;color:var(--muted);margin-top:2px}
+.duration{font-size:10px;margin-top:4px}
+.duration span{color:var(--red)}
+footer{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:20px 16px;color:var(--muted);font-size:10px}
+.footer-brand{font-size:17px;font-weight:bold;color:white}
+footer p{line-height:1.5;text-align:center}
+.social{display:flex;gap:12px;font-size:15px}
+aside{border:1px solid #34434e;border-radius:10px;overflow:hidden;background:#070c11}
+.side-head{display:flex;align-items:center;justify-content:space-between;padding:12px;border-bottom:1px solid var(--border)}
+.side-brand{font-weight:bold;font-size:12px}
+.side-hero{text-align:center;padding:15px 8px;background:radial-gradient(ellipse,#3b1019,#080c11 72%);border-bottom:1px solid var(--border)}
+.side-crown{font-size:38px;color:var(--red)}
+.side-hero h3{font-size:20px;margin:4px 0;font-style:italic}
+.side-hero p{font-size:10px;margin:4px}
+.side-link{display:flex;align-items:center;gap:9px;padding:12px;margin:8px;border:1px solid var(--border);border-radius:7px;font-size:11px}
+.side-link .symbol{font-size:22px;color:var(--red)}
+.side-link small{display:block;color:var(--muted);margin-top:4px}
+.side-section{padding:12px;border-top:1px solid var(--border)}
+.side-section h3{font-size:13px;margin:0 0 10px}
+.side-song{display:flex;align-items:center;gap:7px;padding:5px;margin-bottom:5px;background:#0b1218;border:1px solid #17242d;border-radius:4px;font-size:10px}
+.mini-cover{width:43px;height:40px;flex-shrink:0;display:grid;place-items:center;text-align:center;font-size:9px;font-weight:bold;background:linear-gradient(135deg,#24343e,#07090d,#650d18)}
+.side-song small{display:block;color:var(--muted);margin-top:4px}
+.side-footer{text-align:center;padding:12px;border-top:1px solid var(--border)}
+.admin{display:grid;grid-template-columns:145px minmax(0,1fr);gap:8px;margin-top:4px;margin-bottom:20px}
+.admin-menu,.admin-content{border:1px solid var(--border);border-radius:9px;background:#080d12;padding:12px}
+.admin-menu h3{color:var(--red);font-size:12px}
+.admin-menu button{display:block;width:100%;text-align:left;padding:10px 6px;margin:4px 0;background:transparent;color:#dce2e7;border:0;font-size:11px}
+.admin-menu button.selected{background:#8c0918;border:1px solid var(--red);border-radius:5px}
+.admin-content h2{font-size:17px;margin:0 0 15px}
+.upload-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.upload-box{border:1px solid var(--border);border-radius:6px;padding:15px 8px;text-align:center;font-size:11px}
+.upload-box p{color:var(--muted);font-size:10px;line-height:1.6}
+.upload-box button{background:var(--red);color:white;border:0;border-radius:4px;padding:9px;width:100%}
+.upload-box input{display:none}
+.mobile-menu{display:none}
+@media(max-width:850px){
+ .site{padding:0 5px}
+ .topbar{padding:0 8px;gap:5px;height:48px}
+ .brand{font-size:14px;gap:4px}
+ .crown{font-size:25px}
+ .nav a{padding:16px 5px;font-size:10px}
+ .search{width:90px;padding:8px;font-size:10px}
+ .btn{padding:8px 6px;font-size:10px}
+ .layout{grid-template-columns:minmax(0,1fr) 175px;gap:7px}
+ .hero{height:200px}
+ .hero-label{font-size:9px;letter-spacing:2px}
+ .quicklinks{gap:7px;padding:10px 5px}
+ .quick{padding:8px;gap:5px}
+ .quick .symbol{font-size:21px}
+ .quick strong{font-size:10px}
+ .quick small{font-size:9px}
+ .cards{gap:7px}
+ .content-section{padding:13px 8px}
+ .cards.videos{gap:7px}
+}
+@media(max-width:600px){
+ .site{padding:0}
+ .topbar{position:relative;border-radius:0;flex-wrap:wrap;height:auto;min-height:48px}
+ .brand{font-size:14px}
+ .nav{order:3;width:100%;justify-content:space-around;height:36px}
+ .nav a{padding:10px 5px;border-bottom-width:2px}
+ .search{width:85px}
+ .layout{display:flex;flex-direction:column;margin-top:0}
+ main{width:100%}
+ .hero{height:auto;aspect-ratio:16/7;border-radius:0}
+ .hero img{object-fit:cover}
+ .hero-label{font-size:7px;letter-spacing:.6px;bottom:6px}
+ .quicklinks{gap:5px;padding:9px 5px}
+ .quick{padding:8px 4px;gap:4px}
+ .quick .symbol{font-size:19px}
+ .quick strong{font-size:9px}
+ .quick small{font-size:8px}
+ .arrow{font-size:14px}
+ .content-section{padding:13px 8px}
+ .section-head h2{font-size:13px}
+ .cards{gap:6px;grid-template-columns:repeat(3,minmax(0,1fr))}
+ .cards.videos{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .cover b{font-size:14px}
+ .media-title{font-size:10px}
+ .media-sub,.duration{font-size:9px}
+ footer{flex-wrap:wrap;justify-content:center;text-align:center}
+ footer p{width:100%;margin:0}
+ aside{width:100%;border-radius:0}
+ .side-hero{padding:18px}
+ .side-hero h3{font-size:23px}
+ .side-links{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+ .side-link{margin:4px;padding:8px;gap:4px;font-size:10px}
+ .side-link .symbol{font-size:18px}
+ .side-section{padding:10px}
+ .admin{grid-template-columns:1fr;margin:5px}
+ .admin-menu{display:flex;flex-wrap:wrap;gap:3px}
+ .admin-menu h3{width:100%}
+ .admin-menu button{width:auto;flex:1;padding:8px 4px}
+ .upload-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
+
 <body>
+<div class="site">
+
 <header class="topbar">
-  <a class="brand" href="#home"><span class="crown">♛</span><span>UNDERGROUND <b>EMPIRE</b><small>Bohee Vexer &amp; Flexer</small></span></a>
-  <button class="hamburger" id="menuToggle" aria-label="Toggle menu">☰</button>
-  <nav id="mainNav"><a class="active" href="#home">⌂ <span>Home</span></a><a href="#songs">♫ <span>MP3 Songs</span></a><a href="#videos">▣ <span>Videos</span></a><a href="#photos">▧ <span>Photos</span></a></nav>
-  <div class="search"><span>⌕</span><input id="searchInput" placeholder="Search songs, videos..." aria-label="Search"></div>
-  <button class="outline" id="adminBtn">♟ Admin Login</button>
+  <a class="brand" href="#home"><span class="crown">♛</span><span>UNDERGROUND <em>EMPIRE</em></span></a>
+  <nav class="nav">
+    <a class="active" href="#home">⌂ Home</a>
+    <a href="#songs">♫ MP3 Songs</a>
+    <a href="#videos">▣ Videos</a>
+    <a href="#photos">▧ Photos</a>
+  </nav>
+  <input class="search" id="searchBox" placeholder="⌕ Search..." aria-label="Search">
+  <button class="btn" id="adminLogin">♟ Admin Login</button>
 </header>
-<main id="home" class="layout">
-<div class="maincol"
+
+<div class="layout">
+<main id="home">
+
+<section class="hero">
+  <img src="./Bohee.jpg" alt="Underground Empire - Bohee Vexer & Flexer">
+  <div class="hero-label">MUSIC / VIDEOS / PHOTOS / UNDERGROUND CULTURE</div>
 </section>
 
-
-<section class="photo-banner">
-  <img src="./Bohee.jpg" alt="Bohee Official Banner">
-</section>
-<div class="hero-copy">
-  <div class="hero-copy"><p class="tagline"><p><small>•REAL MUSIC •REAL VIBES •NO LIMITS •UNDERGROUND CULTURE</p></small></div> 
-    
 <section class="quicklinks">
-  <!-- Aapke existing MP3 Songs, Videos aur Photos links yahan rahenge -->
+  <a class="quick" href="#songs"><span class="symbol">♫</span><span><strong>MP3 SONGS</strong><small>Latest & Trending Songs</small></span><span class="arrow">›</span></a>
+  <a class="quick" href="#videos"><span class="symbol">▶</span><span><strong>VIDEOS</strong><small>Music Videos & More</small></span><span class="arrow">›</span></a>
+  <a class="quick" href="#photos"><span class="symbol">▧</span><span><strong>PHOTOS</strong><small>Exclusive Gallery</small></span><span class="arrow">›</span></a>
 </section>
 
+<section class="content-section" id="songs">
+  <div class="section-head"><h2><span>♫</span>Latest MP3 Songs</h2><a class="viewall" href="#songs">View All →</a></div>
+  <div class="cards">
+    <a class="media-card" href="#songs"><div class="cover bluebg"><b>DARK<br>SIDE</b></div><div class="media-title">Dark Side</div><div class="media-sub">Bohee Vexer</div><div class="duration"><span>▶</span> 3:45</div></a>
+    <a class="media-card" href="#songs"><div class="cover redbg"><b>UNDERGROUND</b></div><div class="media-title">Underground</div><div class="media-sub">Flexer</div><div class="duration"><span>▶</span> 4:12</div></a>
+    <a class="media-card" href="#songs"><div class="cover greybg"><b>REAL ONES</b></div><div class="media-title">Real Ones</div><div class="media-sub">Bohee Vexer & Flexer</div><div class="duration"><span>▶</span> 3:28</div></a>
+    <a class="media-card" href="#songs"><div class="cover goldbg"><b>NO LIMITS</b></div><div class="media-title">No Limits</div><div class="media-sub">Flexer</div><div class="duration"><span>▶</span> 3:56</div></a>
+    <a class="media-card" href="#songs"><div class="cover bluebg"><b>LOST VIBES</b></div><div class="media-title">Lost Vibes</div><div class="media-sub">Bohee Vexer</div><div class="duration"><span>▶</span> 3:21</div></a>
+  </div>
+</section>
 
-  
-<section class="quicklinks"><a href="#songs"><span>♫</span><div><b>MP3 SONGS</b><small>Latest &amp; Trending Songs</small></div><strong>→</strong></a><a href="#videos"><span>▶</span><div><b>VIDEOS</b><small>Music Videos &amp; More</small></div><strong>→</strong></a><a href="#photos"><span>▧</span><div><b>PHOTOS</b><small>Exclusive Gallery</small></div><strong>→</strong></a></section>
-<section class="content-section" id="songs"><div class="section-head"><h2><i>♫</i> Latest MP3 Songs</h2><a href="#songs" class="viewall">View All →</a></div><div class="media-grid song-grid" id="songGrid"></div></section>
-<section class="content-section" id="videos"><div class="section-head"><h2><i>▶</i> Latest Videos</h2><a href="#videos" class="viewall">View All →</a></div><div class="media-grid video-grid" id="videoGrid"></div></section>
-<section class="content-section" id="photos"><div class="section-head"><h2><i>▧</i> Latest Photos</h2><a href="#photos" class="viewall">View All →</a></div><div class="media-grid photo-grid" id="photoGrid"></div></section>
-<footer class="footer"><a class="brand compact" href="#home"><span class="crown">♛</span><span>UNDERGROUND <b>EMPIRE</b><small>Bohee Vexer &amp; Flexer</small></span></a><p>“Music is not just sound,<br>it’s a lifestyle.”</p><div class="social">▶　◎　f　♪　◉</div><small>© <span id="year"></span> Underground Empire. All rights reserved.</small></footer>
-</div>
+<section class="content-section" id="videos">
+  <div class="section-head"><h2><span>▶</span>Latest Videos</h2><a class="viewall" href="#videos">View All →</a></div>
+  <div class="cards videos">
+    <a class="media-card" href="#videos"><div class="cover redbg"><b>UNDERGROUND<br>EMPIRE</b><span class="play">▶</span></div><div class="media-title">Underground Empire (Official Video)</div><div class="duration"><span>▶</span> 4:32</div></a>
+    <a class="media-card" href="#videos"><div class="cover goldbg"><b>NO LIMITS</b><span class="play">▶</span></div><div class="media-title">No Limits (Official Video)</div><div class="duration"><span>▶</span> 3:56</div></a>
+    <a class="media-card" href="#videos"><div class="cover bluebg"><b>DARK SIDE</b><span class="play">▶</span></div><div class="media-title">Dark Side (Official Video)</div><div class="duration"><span>▶</span> 3:21</div></a>
+    <a class="media-card" href="#videos"><div class="cover greybg"><b>REAL ONES</b><span class="play">▶</span></div><div class="media-title">Real Ones (Official Video)</div><div class="duration"><span>▶</span> 3:47</div></a>
+  </div>
+</section>
 
+<section class="content-section" id="photos">
+  <div class="section-head"><h2><span>▧</span>Latest Photos</h2><a class="viewall" href="#photos">View All →</a></div>
+  <div class="cards">
+    <div class="cover greybg"><b>UNDERGROUND<br>PORTRAIT</b></div>
+    <div class="cover bluebg"><b>CITY<br>LIGHTS</b></div>
+    <div class="cover bluebg"><b>STUDIO<br>SESSION</b></div>
+    <div class="cover redbg"><b>LIVE<br>SHOW</b></div>
+    <div class="cover goldbg"><b>REAL ONES</b></div>
+  </div>
+</section>
 
-<div class="side-footer"><b>♛ UNDERGROUND <em>EMPIRE</em></b><p>▶　◎　f　♪　◉</p><small>© <span class="year"></span> Underground Empire.</small></div></aside>
+<footer>
+  <div><div class="footer-brand">♛ UNDERGROUND <span class="red">EMPIRE</span></div><small>Bohee Vexer & Flexer</small></div>
+  <p>“Music is not just sound,<br>it's a lifestyle.”</p>
+  <div class="social">▶ ◎ f ♪ ◉</div>
+  <p>© 2026 Underground Empire. All rights reserved.</p>
+</footer>
 </main>
-<section class="admin-panel" id="adminPanel"><div class="admin-title"><h2>♟ Admin Dashboard</h2><button id="closeAdmin" class="close">✕</button></div><p class="notice">Demo dashboard: choose media files to preview them in this browser. GitHub Pages is static hosting, so uploads are not permanently saved for all visitors. See README for a real upload backend.</p>
-<div class="admin-tabs"><button class="selected" data-tab="upload">Upload Media</button><button data-tab="manage">Manage Media</button><button data-tab="settings">Settings</button></div>
-<div id="uploadTab" class="tab-content"><div class="upload-cards">
-<label class="upload-card"><strong>♫ Upload MP3 Songs</strong><span>Click to choose audio files</span><input type="file" id="songUpload" accept="audio/*" multiple><small>MP3, WAV, OGG</small></label>
-<label class="upload-card"><strong>▶ Upload Videos</strong><span>Click to choose video files</span><input type="file" id="videoUpload" accept="video/*" multiple><small>MP4, WebM, MOV</small></label>
-<label class="upload-card"><strong>▧ Upload Photos</strong><span>Click to choose image files</span><input type="file" id="photoUpload" accept="image/*" multiple><small>JPG, PNG, WebP</small></label></div><p id="uploadStatus" role="status"></p></div>
-<div id="manageTab" class="tab-content hidden"><p>Current sample media and any selected local previews:</p><div id="manageList"></div></div>
-<div id="settingsTab" class="tab-content hidden"><label class="setting">Website title <input id="siteTitle" value="Underground Empire"></label><label class="setting">Artist name <input id="artistName" value="Bohee Vexer & Flexer"></label><button id="saveSettings" class="red-btn">Save display settings</button><p id="settingsStatus"></p></div>
-</section>
-<div id="loginModal" class="modal"><form id="loginForm" class="login-card"><button type="button" id="closeLogin" class="close">✕</button><div class="bigcrown">♛</div><h2>ADMIN LOGIN</h2><p>Demo access for website preview</p><label>Username<input id="username" autocomplete="username" placeholder="Enter username" required></label><label>Password<input id="password" type="password" autocomplete="current-password" placeholder="Enter password" required></label><button class="red-btn" type="submit">Login to Dashboard</button><small>Demo: admin / empire123</small><p id="loginError" class="error"></p></form></div>
-<div class="toast" id="toast" role="status"></div>
-<script src="script.js"></script>
-</body></html>
+
+<aside>
+  <div class="side-head"><span class="side-brand">♛ UNDERGROUND <span class="red">EMPIRE</span></span><span>☰</span></div>
+  <div class="side-hero">
+    <div class="side-crown">♛</div>
+    <h3>UNDERGROUND<br><span class="red">EMPIRE</span></h3>
+    <p>Bohee Vexer & Flexer</p>
+  </div>
+  <div class="side-links">
+    <a class="side-link" href="#songs"><span class="symbol">♫</span><span><b>MP3 SONGS</b><small>Latest & Trending Songs</small></span>›</a>
+    <a class="side-link" href="#videos"><span class="symbol">▶</span><span><b>VIDEOS</b><small>Music Videos & More</small></span>›</a>
+    <a class="side-link" href="#photos"><span class="symbol">▧</span><span><b>PHOTOS</b><small>Exclusive Gallery</small></span>›</a>
+  </div>
+  <div class="side-section">
+    <h3><span class="red">♫</span> Latest MP3 Songs</h3>
+    <div class="side-song"><div class="mini-cover">DARK SIDE</div><span>Dark Side<small>Bohee Vexer · ▶ 3:45</small></span></div>
+    <div class="side-song"><div class="mini-cover">UNDERGROUND</div><span>Underground<small>Flexer · ▶ 4:12</small></span></div>
+    <div class="side-song"><div class="mini-cover">REAL ONES</div><span>Real Ones<small>Bohee Vexer & Flexer · ▶ 3:21</small></span></div>
+    <a class="viewall" href="#songs">View All →</a>
+  </div>
+  <div class="side-section">
+    <h3><span class="red">▶</span> Latest Videos</h3>
+    <div class="side-song"><div class="mini-cover">EMPIRE</div><span>Underground Empire<small>▶ 4:32</small></span></div>
+    <div class="side-song"><div class="mini-cover">NO LIMITS</div><span>No Limits<small>▶ 3:56</small></span></div>
+    <div class="side-song"><div class="mini-cover">DARK SIDE</div><span>Dark Side<small>▶ 3:21</small></span></div>
+    <a class="viewall" href="#videos">View All →</a>
+  </div>
+  <div class="side-section">
+    <h3><span class="red">▧</span> Latest Photos</h3>
+    <div class="cards" style="grid-template-columns:repeat(3,minmax(
+```
