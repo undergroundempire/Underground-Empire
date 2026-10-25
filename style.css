@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root {
+  --gold: #d6ad55;
+  --gold-light: #f3d98b;
+  --black: #080808;
+  --panel: #121212;
+  --muted: #b7b1a4;
+  --white: #f8f5ed;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 78px; }
+body { margin: 0; background: var(--black); color: var(--white); font-family: Montserrat, Arial, sans-serif; }
+a { color: inherit; }
+.site-header {
+  min-height: 78px; padding: 12px clamp(18px, 5vw, 72px); display: flex;
+  align-items: center; justify-content: space-between; gap: 24px;
+  background: rgba(7,7,7,.97); border-bottom: 1px solid rgba(214,173,85,.35);
+  position: sticky; top: 0; z-index: 10;
+}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.crown { display: inline-block; color: var(--gold-light); font-size: 39px; line-height: 1; transform-origin: center; animation: crown-turn 7s linear infinite; text-shadow: 0 0 18px rgba(214,173,85,.4); }
+@keyframes crown-turn { 0% { transform: rotateY(0deg); } 100% { transform: rotateY(360deg); } }
+.brand-copy { display: flex; flex-direction: column; font-family: Cinzel, Georgia, serif; font-size: 15px; letter-spacing: 2px; line-height: 1.12; }
+.brand-copy strong { color: var(--gold); font-size: 20px; letter-spacing: 4px; }
+.brand-copy small { margin-top: 5px; color: #c4bba8; font: 9px Montserrat, Arial, sans-serif; letter-spacing: 1.4px; }
+nav { display: flex; align-items: center; gap: clamp(14px, 3vw, 34px); }
+nav a { color: #eee6d5; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-decoration: none; text-transform: uppercase; transition: color .2s; }
+nav a:hover, nav a:focus { color: var(--gold-light); }
+.menu-toggle { display: none; border: 1px solid #6e592d; color: var(--gold); background: transparent; padding: 8px 11px; font-size: 22px; }
+.hero { min-height: 590px; position: relative; display: flex; align-items: center; overflow: hidden; background: radial-gradient(ellipse at 72% 42%, #3a2a12 0, #17120b 30%, #080808 70%); }
+.hero-image-wrap { position: absolute; inset: 0 0 0 37%; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+.hero-image { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; opacity: .76; }
+.hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, #080808 0%, rgba(8,8,8,.95) 28%, rgba(8,8,8,.58) 55%, rgba(8,8,8,.12) 100%), linear-gradient(0deg, #080808 0%, transparent 35%); }
+.hero-content { position: relative; z-index: 1; width: min(700px, 90%); padding: 75px clamp(22px, 8vw, 120px); }
+.eyebrow { margin: 0 0 13px; color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; }
+.hero-content h1 { margin: 0; font: 700 clamp(36px, 5.8vw, 72px)/1.12 Cinzel, Georgia, serif; letter-spacing: 1px; }
+.hero-content h1 span { display: block; color: var(--gold-light); }
+.hero-subtitle { margin: 18px 0 30px; color: #d2c8b5; letter-spacing: 3px; text-transform: uppercase; font-size: 12px; }
+.gold-button { display: inline-block; padding: 13px 21px; border: 1px solid var(--gold); background: linear-gradient(120deg, #f0d483, #b58a35); color: #090909; font-size: 11px; font-weight: 800; letter-spacing: 1.4px; text-decoration: none; text-transform: uppercase; transition: transform .2s, filter .2s; }
+.gold-button:hover { transform: translateY(-2px); filter: brightness(1.08); }
+.photo-fallback { position: absolute; inset: 0; padding: 30px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: radial-gradient(circle, #2d2110, #080808 70%); }
+.photo-fallback[hidden] { display: none; }
+.fallback-crown { font-size: 68px; color: var(--gold); }
+.photo-fallback h1 { color: var(--gold-light); font: 700 clamp(24px, 5vw, 48px) Cinzel, Georgia, serif; }
+.photo-fallback p { letter-spacing: 4px; }
+.photo-fallback small { color: var(--muted); font-size: 11px; }
+.section { padding: 76px clamp(22px, 9vw, 130px); }
+.section-dark { background: #101010; border-top: 1px solid #211b10; border-bottom: 1px solid #211b10; }
+.section-heading { margin-bottom: 27px; }
+.section-heading h2 { margin: 0; font: 600 clamp(28px, 4vw, 42px) Cinzel, Georgia, serif; }
+.feature-card { display: flex; align-items: center; gap: 22px; max-width: 660px; padding: 24px; background: linear-gradient(120deg, #171717, #0c0c0c); border: 1px solid #40331a; }
+.feature-mark { display: grid; place-items: center; width: 68px; height: 68px; flex: 0 0 68px; background: #241b0c; border: 1px solid var(--gold); color: var(--gold-light); font-size: 35px; }
+.feature-card h3 { margin: 0 0 7px; font: 700 22px Cinzel, Georgia, serif; letter-spacing: 2px; }
+.feature-card p, .section-intro { color: var(--muted); font-size: 14px; line-height: 1.8; }
+.text-link { color: var(--gold-light); font-size: 12px; font-weight: 700; text-decoration: none; }
+.text-link:hover { text-decoration: underline; }
+.photo-card { max-width: 420px; overflow: hidden; border: 1px solid #44371d; background: #111; }
+.photo-card img { display: block; width: 100%; max-height: 520px; object-fit: cover; }
+.photo-card p { margin: 0; padding: 15px; color: var(--gold); font: 600 13px Cinzel, Georgia, serif; letter-spacing: 2px; }
+.photo-card.photo-missing { min-height: 160px; display: grid; place-items: center; }
+.photo-card.photo-missing::before { content: '♛  BOHEE OFFICIAL'; padding: 35px; color: var(--gold); font: 600 17px Cinzel, Georgia, serif; }
+.photo-card.photo-missing p { display: none; }
+.site-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding: 25px clamp(22px, 5vw, 72px); color: #999080; font-size: 11px; }
+.footer-brand { color: var(--gold); font-family: Cinzel, Georgia, serif; letter-spacing: 1px; text-decoration: none; }
+.site-footer a:last-child { color: var(--gold-light); text-decoration: none; }
+@media (max-width: 700px) {
+  .site-header { min-height: 70px; padding: 10px 16px; }
+  .crown { font-size: 32px; }
+  .brand-copy { font-size: 12px; }
+  .brand-copy strong { font-size: 17px; }
+  .brand-copy small { font-size: 8px; }
+  .menu-toggle { display: block; }
+  nav { display: none; position: absolute; top: 69px; left: 0; right: 0; padding: 18px 22px; background: #090909; border-bottom: 1px solid #5a4724; flex-direction: column; align-items: flex-start; gap: 19px; }
+  nav.open { display: flex; }
+  .hero { min-height: 530px; }
+  .hero-image-wrap { inset: 0; }
+  .hero-image { opacity: .52; object-position: center; }
+  .hero-shade { background: linear-gradient(90deg, rgba(8,8,8,.93), rgba(8,8,8,.45)), linear-gradient(0deg, #080808 0%, transparent 55%); }
+  .hero-content { padding: 60px 24px; }
+  .hero-content h1 { font-size: clamp(34px, 10vw, 54px); }
+  .section { padding: 55px 22px; }
+  .feature-card { padding: 17px; gap: 15px; }
+  .feature-mark { width: 54px; height: 54px; flex-basis: 54px; }
+  .site-footer { align-items: flex-start; flex-direction: column; }
+}
