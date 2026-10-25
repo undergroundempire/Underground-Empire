@@ -41,6 +41,14 @@
 }
 
 
+
 .banner-tagline {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
   text-align: center;
+  color: white;
+  font-size: 9px;
 }
