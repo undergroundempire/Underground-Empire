@@ -4,10 +4,11 @@
 
 
 /* Underground Empire responsive banner */
+
 .photo-banner {
+  margin-top: -20px;
+  padding-top: 0;
   width: 100%;
-  margin: 0;
-  padding: 0;
   overflow: hidden;
   line-height: 0;
 }
