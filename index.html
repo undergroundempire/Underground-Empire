@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101010">
+<meta name="description" content="UNDERGROUND EMPIRE — Bohee Vexer & Flexer.">
+<title>UNDERGROUND EMPIRE | Bohee Vexer &amp; Flexer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero" id="home">
+  <div class="hero-inner">
+    <div class="crown-wrap"><img class="crown-img" src="Crown.png" alt="Golden crown" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="crown-fallback">👑</span></div>
+    <div class="brand">
+      <p class="eyebrow">WELCOME TO</p>
+      <h1><span>UNDERGROUND</span><strong>EMPIRE</strong></h1>
+      <p class="subtitle">BOHEE VEXER &amp; FLEXER</p>
+      <p class="tagline">MUSIC • VIDEOS • PHOTOS • UNDERGROUND CULTURE</p>
+      <a class="gold-button" href="#music">EXPLORE THE EMPIRE</a>
+    </div>
+    <div class="artist-photo"><img src="Bohee.jpg" alt="Bohee artist portrait" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><div class="photo-fallback">Add Bohee.jpg to this repository</div></div>
+  </div>
+</header>
+<nav class="nav">
+  <a class="nav-logo" href="#home">👑 UNDERGROUND EMPIRE</a>
+  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav">☰</button>
+  <div class="nav-links" id="mainNav">
+    <a href="#music">MP3 SONGS</a><a href="#videos">VIDEOS</a><a href="#shorts">SHORTS</a><a href="#pictures">PHOTOS</a><a href="#upcoming">UPCOMING</a><a href="#about">ABOUT</a>
+  </div>
+</nav>
+<main>
+<section class="content-section" id="music">
+  <div class="section-heading"><p class="eyebrow">THE SOUND</p><h2>MP3 <span>SONGS</span></h2><p>Search your music list below.</p></div>
+  <label class="sr-only" for="musicSearch">Search songs</label><input class="search-box" id="musicSearch" type="search" placeholder="Search songs...">
+  <div class="media-grid" id="musicList"><p class="empty-state">Songs will appear here after you publish MP3 files.</p></div>
+</section>
+<section class="content-section alt" id="videos">
+  <div class="section-heading"><p class="eyebrow">WATCH</p><h2>OFFICIAL <span>VIDEOS</span></h2></div>
+  <label class="sr-only" for="videoSearch">Search videos</label><input class="search-box" id="videoSearch" type="search" placeholder="Search videos...">
+  <div class="media-grid" id="videoList"><p class="empty-state">Official videos will appear here after you publish them.</p></div>
+</section>
+<section class="content-section" id="shorts">
+  <div class="section-heading"><p class="eyebrow">QUICK WATCH</p><h2>SHORTS <span>VIDEOS</span></h2></div>
+  <label class="sr-only" for="shortSearch">Search shorts</label><input class="search-box" id="shortSearch" type="search" placeholder="Search shorts...">
+  <div class="media-grid" id="shortList"><p class="empty-state">Short clips will appear here after you publish them.</p></div>
+</section>
+<section class="content-section alt" id="pictures">
+  <div class="section-heading"><p class="eyebrow">THE GALLERY</p><h2>PHOTO <span>GALLERY</span></h2></div>
+  <label class="sr-only" for="pictureSearch">Search photos</label><input class="search-box" id="pictureSearch" type="search" placeholder="Search photos...">
+  <div class="photo-grid" id="pictureList"><p class="empty-state">Photos will appear here after you publish them.</p></div>
+</section>
+<section class="content-section upcoming" id="upcoming"><p class="eyebrow">NEXT UP</p><h2>COMING <span>SOON</span></h2><p>New music, videos and projects are on the way.</p></section>
+<section class="content-section alt" id="about"><div class="section-heading"><p class="eyebrow">WHO WE ARE</p><h2>ABOUT <span>UNDERGROUND EMPIRE</span></h2></div><p class="about-text">A home for Bohee Vexer &amp; Flexer — music, visuals, photos and underground culture.</p></section>
+<section class="content-section admin-section" id="admin">
+  <div class="section-heading"><p class="eyebrow">LOCAL PREVIEW TOOL</p><h2>ADD <span>MEDIA</span></h2></div>
+  <p class="notice">Choose files to preview them on this device only. This does not publish files to the website or automatically post to Facebook, Instagram or YouTube. To make files public, upload them to your GitHub repository.</p>
+  <label class="upload-label" for="mediaType">Media category</label>
+  <select id="mediaType" class="search-box"><option value="music">MP3 songs</option><option value="videos">Videos</option><option value="shorts">Short videos</option><option value="pictures">Photos</option></select>
+  <label class="upload-label" for="mediaFiles">Choose media files</label><input class="file-input" id="mediaFiles" type="file" accept="audio/*,video/*,image/*" multiple>
+  <div id="previewList" class="media-grid"><p class="empty-state">Selected files preview here.</p></div>
+</section>
+</main>
+<footer><p>© <span id="year"></span> UNDERGROUND EMPIRE · BOHEE VEXER &amp; FLEXER</p></footer>
+<script src="script.js"></script>
+</body></html>
