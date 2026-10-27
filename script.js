@@ -1,39 +1,20 @@
-// Live Search Filtering functionality
-document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.getElementById('searchInput');
-    const cards = document.querySelectorAll('.card-banner');
+// Card click action
+function handleCardClick(sectionName) {
+    console.log(sectionName + " clicked!");
+    alert("Aap ne select kiya: " + sectionName);
+}
 
-    searchInput.addEventListener('input', (e) => {
-        const query = e.target.value.toLowerCase().trim();
+// Scroll to top function for navbar brand click
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
-        cards.forEach(card => {
-            const title = card.getAttribute('data-title');
-            if (title.includes(query)) {
-                card.style.display = 'flex';
-            } else {
-                card.style.display = 'none';
-            }
-        });
+// Search live filter event listener
+const searchInput = document.getElementById('searchInput');
+if (searchInput) {
+    searchInput.addEventListener('input', function(e) {
+        const query = e.target.value.toLowerCase();
+        console.log("Searching for:", query);
+        // Yahan aap cards ko filter karne ka logic likh sakte hain agar zaroorat ho
     });
-
-    // Navbar active class switcher & Smooth click effects
-    const navLinks = document.querySelectorAll('nav ul li a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            navLinks.forEach(item => item.classList.remove('active'));
-            this.classList.add('active');
-            
-            const sectionName = this.getAttribute('data-section');
-            console.log(`Navigated to: ${sectionName}`);
-        });
-    });
-
-    // Card click events simulation
-    cards.forEach(card => {
-        card.addEventListener('click', () => {
-            const songTitle = card.querySelector('h2').innerText;
-            alert(`Opening ${songTitle} section...`);
-        });
-    });
-});
+}
