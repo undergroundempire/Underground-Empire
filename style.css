@@ -5,9 +5,9 @@
 }
 
 body {
-    background-image: url('bg.png'); /* Yahan 'Bg.png' se 'bg.png' kar diya hai */
-    background-size: cover;
-    background-position: center;
+    background-image: url('bg.png');
+    background-size: 100% 100%; /* Background ko poore page par perfectly stretch aur fit karne ke liye */
+    background-position: top center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: #fff;
@@ -18,7 +18,6 @@ body {
     align-items: center;
     padding-bottom: 40px;
 }
-
 /* Top Navigation Bar */
 .navbar {
     width: 100%;
