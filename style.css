@@ -8,8 +8,8 @@
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 
 .crown-orbit {
-  width: 70px;
-  height: 70px;
+  width: 120px;
+  height: 120px;
   display: inline-grid;
   place-items: center;
   position: relative;
@@ -17,34 +17,19 @@
 }
 
 .crown-icon {
-  font-size: 42px;
+  font-size: 85px;
   z-index: 2;
   position: relative;
-  filter: drop-shadow(0 0 7px #ffd700);
+  filter: drop-shadow(0 0 12px #ffd700);
 }
 
 .orbit-ring {
   position: absolute;
-  width: 64px;
-  height: 24px;
-  border: 2px solid #ffd700;
+  width: 115px;
+  height: 42px;
+  border: 3px solid #ffd700;
   border-radius: 50%;
-  box-shadow: 0 0 8px #ffbf00, inset 0 0 5px #ffbf00;
+  box-shadow: 0 0 12px #ffbf00, inset 0 0 7px #ffbf00;
   transform: rotate(-25deg);
   animation: goldenOrbit 2.5s linear infinite;
-}
-
-@keyframes goldenOrbit {
-  from {
-    transform: rotate(-25deg);
-  }
-  to {
-    transform: rotate(335deg);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .orbit-ring {
-    animation: none;
-  }
 }
