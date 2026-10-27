@@ -15,6 +15,8 @@ if (searchInput) {
     searchInput.addEventListener('input', function(e) {
         const query = e.target.value.toLowerCase();
         console.log("Searching for:", query);
-        // Yahan aap cards ko filter karne ka logic likh sakte hain agar zaroorat ho
+        
+        // Agar aap chahte hain ke search karne par cards filter hon, 
+        // toh aap yahan apna logic add kar sakte hain.
     });
 }
