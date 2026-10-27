@@ -248,8 +248,8 @@ body {
 }
 
 /* Responsive */
-@media(max-width: 768px) {
+@media(max-width: 1000px) {
     .nav-links { display: none; }
-    .hero-banner { height: 210px; }
+    .hero-banner { height: 200px; }
     .card-title { font-size: 25px; }
         }
