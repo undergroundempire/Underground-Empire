@@ -1,161 +1,109 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#030303">
-
-  <title>Underground Empire</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css?v=4">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Underground Empire</title>
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- INTRO SCREEN -->
-  <div id="introScreen">
-    <img src="crown.png" alt="Crown" class="intro-crown">
-    <h1>UNDERGROUND<br>EMPIRE</h1>
-    <div class="intro-line"></div>
-    <p class="intro-caption">REAL MUSIC. REAL VIBES. NO LIMITS.</p>
-  </div>
+    <!-- Header -->
+    <header>
+        <div class="logo-area">
+            <img src="crown.png" alt="Crown">
+            <div class="logo-text">Underground Empire</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active" data-section="home">MP3 SONGS</a></li>
+                <li><a href="#" data-section="videos">VIDEOS</a></li>
+                <li><a href="#" data-section="shorts">SHORTS</a></li>
+                <li><a href="#" data-section="photos">PHOTOS</a></li>
+                <li><a href="#" data-section="about">ABOUT</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- MAIN WEBSITE -->
-  <main class="page">
-
-    <div class="top-tagline">
-      <span>REAL MUSIC. &nbsp; REAL VIBES. &nbsp; UNDERGROUND CULTURE. &nbsp; NO LIMITS.</span>
+    <!-- Hero Banner -->
+    <div class="hero-banner">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="crown.png" alt="Crown">
+            <h1>Underground Empire</h1>
+            <p>Bohee Vexer & Flexer</p>
+        </div>
+    </div>
+    <div class="hero-tagline">
+        REAL MUSIC. REAL VIBES. UNDERGROUND CULTURE. NO LIMITS.
     </div>
 
-    <label class="search-box">
-      <span class="search-icon">⌕</span>
-      <input
-        id="siteSearch"
-        type="search"
-        placeholder="Search songs, videos, shorts or photos..."
-        aria-label="Search categories">
-    </label>
+    <!-- Search Bar -->
+    <div class="search-container">
+        <div class="search-box">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+            <input type="text" id="searchInput" placeholder="Search songs, videos, shorts or photos...">
+        </div>
+    </div>
 
-    <!-- MP3 SONGS -->
-    <section class="category songs"
-      data-search="mp3 songs music listen">
+    <!-- Main Sections -->
+    <div class="container" id="cardsContainer">
+        <!-- MP3 Songs -->
+        <div class="card-banner" data-title="mp3 songs">
+            <div class="card-info">
+                <span>The Sound</span>
+                <h2>MP3 Songs</h2>
+                <p>LISTEN &nbsp;/&nbsp; FEEL &nbsp;/&nbsp; REPEAT</p>
+            </div>
+            <div class="card-icon">🎵</div>
+        </div>
 
-      <div class="left-icon play">
-        <span>▶</span>
-      </div>
+        <!-- Official Videos -->
+        <div class="card-banner" data-title="official videos">
+            <div class="card-info">
+                <span>Watch</span>
+                <h2>Official Videos</h2>
+                <p>MUSIC VIDEOS &nbsp;/&nbsp; VISUAL STORIES</p>
+            </div>
+            <div class="card-icon">🎬</div>
+        </div>
 
-      <div class="category-copy">
-        <p class="eyebrow">THE SOUND</p>
-        <h2><span>MP3</span> <em>SONGS</em></h2>
-        <p class="subline">LISTEN &nbsp; / &nbsp; FEEL &nbsp; / &nbsp; REPEAT</p>
-      </div>
+        <!-- Shorts Videos -->
+        <div class="card-banner" data-title="shorts videos">
+            <div class="card-info">
+                <span>Quick Watch</span>
+                <h2>Shorts Videos</h2>
+                <p>SMALL CLIPS &nbsp;/&nbsp; BIG VIBES</p>
+            </div>
+            <div class="card-icon">📱</div>
+        </div>
 
-      <div class="headphones-crown">♛</div>
-    </section>
+        <!-- Photo Gallery -->
+        <div class="card-banner" data-title="photo gallery">
+            <div class="card-info">
+                <span>The Gallery</span>
+                <h2>Photo Gallery</h2>
+                <p>MOMENTS &nbsp;/&nbsp; BEHIND THE SCENES</p>
+            </div>
+            <div class="card-icon">📸</div>
+        </div>
+    </div>
 
-    <!-- OFFICIAL VIDEOS -->
-    <section class="category videos"
-      data-search="official videos music video">
-
-      <div class="clapper">
-        <span>▶</span>
-      </div>
-
-      <div class="category-copy">
-        <p class="eyebrow">WATCH</p>
-        <h2><span>OFFICIAL</span> <em>VIDEOS</em></h2>
-        <p class="subline">MUSIC VIDEOS &nbsp; / &nbsp; VISUAL STORIES</p>
-      </div>
-    </section>
-
-    <!-- SHORTS -->
-    <section class="category shorts"
-      data-search="shorts videos clips">
-
-      <div class="phone">
-        <span>ϟ</span>
-      </div>
-
-      <div class="category-copy">
-        <p class="eyebrow">QUICK WATCH</p>
-        <h2><span>SHORTS</span> <em>VIDEOS</em></h2>
-        <p class="subline">SMALL CLIPS &nbsp; / &nbsp; BIG VIBES</p>
-      </div>
-
-      <div class="artist-silhouette"></div>
-    </section>
-
-    <!-- PHOTO GALLERY -->
-    <section class="category photos"
-      data-search="photo photos gallery pictures">
-
-      <div class="left-icon camera">◎</div>
-
-      <div class="category-copy">
-        <p class="eyebrow">THE GALLERY</p>
-        <h2><span>PHOTO</span> <em>GALLERY</em></h2>
-        <p class="subline">MOMENTS &nbsp; / &nbsp; BEHIND THE SCENES</p>
-      </div>
-
-      <div class="photo-stack">
-        <i></i>
-        <i></i>
-        <i></i>
-      </div>
-    </section>
-
-    <p id="noResults" class="no-results" hidden>
-      No matching category found.
-    </p>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-
-      <img src="crown.png" alt="Crown" class="footer-crown">
-
-      <p class="footer-brand">UNDERGROUND EMPIRE</p>
-      <p class="footer-artist">Bohee Vexer &amp; Flexer</p>
-
-      <p class="copyright">
-        © 2012 – 2026 Underground Empire. All Rights Reserved.
-      </p>
-
-      <div class="socials">
-
-        <a href="https://www.youtube.com/@boheeofficial"
-           target="_blank" rel="noopener"
-           aria-label="YouTube">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/>
-          </svg>
-        </a>
-
-        <a href="https://www.instagram.com/"
-           target="_blank" rel="noopener"
-           aria-label="Instagram">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2.2A2.8 2.8 0 0 0 4.2 7v10A2.8 2.8 0 0 0 7 19.8h10a2.8 2.8 0 0 0 2.8-2.8V7A2.8 2.8 0 0 0 17 4.2H7Zm5 2.3a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11Zm0 2.2a3.3 3.3 0 1 0 0 6.6 3.3 3.3 0 0 0 0-6.6Zm5.7-3.5a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6Z"/>
-          </svg>
-        </a>
-
-        <a href="https://www.facebook.com/"
-           target="_blank" rel="noopener"
-           aria-label="Facebook">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M13.6 22v-9h3l.5-3.5h-3.5V7.3c0-1 .3-1.7 1.8-1.7h1.9V2.5c-.9-.1-1.9-.2-2.8-.2-2.8 0-4.7 1.7-4.7 4.8v2.4H6.7V13h3.1v9h3.8Z"/>
-          </svg>
-        </a>
-
-      </div>
+    <!-- Footer -->
+    <footer>
+        <img src="crown.png" alt="Crown">
+        <h3>Underground Empire</h3>
+        <p>Bohee Vexer & Flexer</p>
+        <p>© 2012 – 2026 Underground Empire. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="#" title="YouTube">▶</a>
+            <a href="#" title="Instagram">📷</a>
+            <a href="#" title="Facebook">f</a>
+        </div>
     </footer>
 
-  </main>
-
-  <script src="script.js?v=4"></script>
+    <!-- JS Link -->
+    <script src="script.js"></script>
 </body>
 </html>
