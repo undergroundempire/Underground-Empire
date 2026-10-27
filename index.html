@@ -4,14 +4,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Underground Empire</title>
+  <meta name="theme-color" content="#08090b">
+  <title>Underground Empire | Bohee Vexer &amp; Flexer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="topbar">
-  <a class="brand" href="#home">👑 UNDERGROUND EMPIRE</a>
-  <button id="menuToggle" aria-expanded="false">☰</button>
+  <a class="brand" href="#home">
+    <img src="Crown.png" alt="Crown" class="crown">
+    <span>UNDERGROUND EMPIRE</span>
+  </a>
+
+  <button id="menuToggle" aria-label="Open menu"
+          aria-expanded="false">☰</button>
+
   <nav id="mainNav">
     <a href="#songs">MP3 SONGS</a>
     <a href="#videos">VIDEOS</a>
@@ -21,45 +28,97 @@
   </nav>
 </header>
 
-<section class="hero" id="home">
-  <img src="Bohee.jpg" alt="Underground Empire Banner">
-</section>
+<main>
+  <!-- YOUR ORIGINAL BANNER PHOTO -->
+  <section class="hero" id="home">
+    <img src="Bohee.jpg" alt="Underground Empire Banner"
+         class="hero-banner">
+  </section>
 
-<section class="section" id="songs">
-  <p>THE SOUND</p>
-  <h1>MP3 <span>SONGS</span></h1>
-  <input type="search" placeholder="Search songs...">
-  <div class="placeholder">Songs will appear here after you add MP3 files.</div>
-</section>
+  <!-- ANIMATED SLOGAN -->
+  <div class="slogan">
+    <span>REAL MUSIC.</span>
+    <span>REAL VIBES.</span>
+    <span>UNDERGROUND CULTURE.</span>
+    <span>NO LIMITS.</span>
+  </div>
 
-<section class="section alternate" id="videos">
-  <p>WATCH</p>
-  <h1>OFFICIAL <span>VIDEOS</span></h1>
-  <input type="search" placeholder="Search videos...">
-  <div class="placeholder">Your official videos will appear here.</div>
-</section>
+  <!-- ONE SEARCH BOX FOR THE WEBSITE -->
+  <div class="search-area">
+    <input id="siteSearch" type="search"
+           placeholder="Search songs, videos, shorts or photos..."
+           aria-label="Search website">
+    <p id="searchMessage">Explore the Underground Empire.</p>
+  </div>
 
-<section class="section" id="shorts">
-  <p>QUICK WATCH</p>
-  <h1>SHORTS <span>VIDEOS</span></h1>
-  <input type="search" placeholder="Search shorts...">
-  <div class="placeholder">Your short videos will appear here.</div>
-</section>
+  <!-- MP3 SONGS -->
+  <section class="showcase songs" id="songs">
+    <div class="section-art headphones">♫</div>
+    <div class="section-info">
+      <p class="eyebrow">THE SOUND</p>
+      <h2>MP3 <span>SONGS</span></h2>
+      <p>LISTEN · FEEL · REPEAT</p>
+      <div class="media-list" data-searchable>
+        Songs will appear here after you add MP3 files.
+      </div>
+    </div>
+  </section>
 
-<section class="section alternate" id="photos">
-  <p>THE GALLERY</p>
-  <h1>PHOTO <span>GALLERY</span></h1>
-  <input type="search" placeholder="Search photos...">
-  <div class="placeholder">Your photos will appear here.</div>
-</section>
+  <!-- OFFICIAL VIDEOS -->
+  <section class="showcase videos" id="videos">
+    <div class="section-info">
+      <p class="eyebrow">WATCH</p>
+      <h2>OFFICIAL <span>VIDEOS</span></h2>
+      <p>MUSIC VIDEOS · VISUAL STORIES</p>
+      <div class="media-list" data-searchable>
+        Official videos will appear here after you add them.
+      </div>
+    </div>
+    <div class="section-art clapper">▶</div>
+  </section>
 
-<section class="section" id="about">
-  <p>OUR WORLD</p>
-  <h1>ABOUT <span>THE EMPIRE</span></h1>
-  <div class="placeholder">Bohee Vexer &amp; Flexer — Music, videos and underground culture.</div>
-</section>
+  <!-- SHORTS -->
+  <section class="showcase shorts" id="shorts">
+    <div class="section-art phone-art">▶</div>
+    <div class="section-info">
+      <p class="eyebrow">QUICK WATCH</p>
+      <h2>SHORTS <span>VIDEOS</span></h2>
+      <p>SMALL CLIPS · BIG VIBES</p>
+      <div class="media-list" data-searchable>
+        Short videos will appear here after you add them.
+      </div>
+    </div>
+  </section>
 
-<footer>© Underground Empire</footer>
+  <!-- PHOTO GALLERY -->
+  <section class="showcase photos" id="photos">
+    <div class="section-info">
+      <p class="eyebrow">THE GALLERY</p>
+      <h2>PHOTO <span>GALLERY</span></h2>
+      <p>MOMENTS · BEHIND THE SCENES</p>
+      <div class="media-list" data-searchable>
+        Photos will appear here after you add them.
+      </div>
+    </div>
+    <div class="section-art camera-art">📷</div>
+  </section>
+
+  <section class="about" id="about">
+    <p class="eyebrow">OUR WORLD</p>
+    <h2>UNDERGROUND <span>EMPIRE</span></h2>
+    <p>Bohee Vexer &amp; Flexer</p>
+    <p>Real Music. Real Vibes. No Limits.</p>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-crown">♛</div>
+  <div class="footer-line"></div>
+  <p class="footer-brand">UNDERGROUND EMPIRE</p>
+  <div class="footer-line"></div>
+  <small>© <span id="year"></span> Underground Empire</small>
+</footer>
+
 <script src="script.js"></script>
 </body>
 </html>
