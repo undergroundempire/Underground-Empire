@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url('Bg.png');
+    background-image: url('bg.png'); /* Yahan 'Bg.png' se 'bg.png' kar diya hai */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
