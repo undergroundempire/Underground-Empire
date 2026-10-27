@@ -11,7 +11,7 @@ body {
     background-repeat: no-repeat;
     color: #fff;
     font-family: 'Roboto', sans-serif;
-    min-height: 100vh;
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
     align-items: center;
