@@ -4,106 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Underground Empire</title>
-    <!-- CSS Link -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Permanent+Marker&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Link CSS File -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="logo-area">
-            <img src="crown.png" alt="Crown">
-            <div class="logo-text">Underground Empire</div>
+    <!-- Top Navigation Bar -->
+    <div class="navbar">
+        <div class="nav-brand" onclick="scrollToTop()">
+            <img src="Crown_178898.png" alt="Crown" class="nav-crown">
+            <span class="nav-title">UNDERGROUND EMPIRE</span>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#" class="active" data-section="home">MP3 SONGS</a></li>
-                <li><a href="#" data-section="videos">VIDEOS</a></li>
-                <li><a href="#" data-section="shorts">SHORTS</a></li>
-                <li><a href="#" data-section="photos">PHOTOS</a></li>
-                <li><a href="#" data-section="about">ABOUT</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hero Banner -->
-    <div class="hero-banner">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <img src="crown.png" alt="Crown">
-            <h1>Underground Empire</h1>
-            <p>Bohee Vexer & Flexer</p>
-        </div>
-    </div>
-    <div class="hero-tagline">
-        REAL MUSIC. REAL VIBES. UNDERGROUND CULTURE. NO LIMITS.
-    </div>
-
-    <!-- Search Bar -->
-    <div class="search-container">
-        <div class="search-box">
-            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-            <input type="text" id="searchInput" placeholder="Search songs, videos, shorts or photos...">
+        <div class="nav-links">
+            <a href="#" class="active">MP3 SONGS</a>
+            <a href="#">VIDEOS</a>
+            <a href="#">SHORTS</a>
+            <a href="#">PHOTOS</a>
+            <a href="#">ABOUT</a>
         </div>
     </div>
 
-    <!-- Main Sections -->
-    <div class="container" id="cardsContainer">
-        <!-- MP3 Songs -->
-        <div class="card-banner" data-title="mp3 songs">
-            <div class="card-info">
-                <span>The Sound</span>
-                <h2>MP3 Songs</h2>
-                <p>LISTEN &nbsp;/&nbsp; FEEL &nbsp;/&nbsp; REPEAT</p>
+    <div class="container">
+        <!-- Hero Banner Section -->
+        <div class="hero-banner"></div>
+
+        <!-- Middle Tagline -->
+        <div class="mid-tagline">REAL MUSIC. REAL VIBES. UNDERGROUND CULTURE. NO LIMITS.</div>
+
+        <!-- Search Bar -->
+        <input type="text" class="search-box" placeholder="🔍 Search songs, videos, shorts or photos..." id="searchInput">
+
+        <!-- Cards Section -->
+        <div class="cards-wrapper">
+            <!-- MP3 Songs Card -->
+            <div class="card" onclick="handleCardClick('MP3 Songs')">
+                <div class="card-subtext-top">THE SOUND</div>
+                <div class="card-title">MP3 SONGS</div>
+                <div class="card-subtext-bottom">LISTEN / FEEL / REPEAT</div>
             </div>
-            <div class="card-icon">🎵</div>
+
+            <!-- Official Videos Card -->
+            <div class="card" onclick="handleCardClick('Official Videos')">
+                <div class="card-subtext-top">WATCH</div>
+                <div class="card-title">OFFICIAL VIDEOS</div>
+                <div class="card-subtext-bottom">MUSIC VIDEOS / VISUAL STORIES</div>
+            </div>
+
+            <!-- Shorts Videos Card -->
+            <div class="card" onclick="handleCardClick('Shorts Videos')">
+                <div class="card-subtext-top">QUICK WATCH</div>
+                <div class="card-title">SHORTS VIDEOS</div>
+                <div class="card-subtext-bottom">SMALL CLIPS / BIG VIBES</div>
+            </div>
+
+            <!-- Photo Gallery Card -->
+            <div class="card" onclick="handleCardClick('Photo Gallery')">
+                <div class="card-subtext-top">THE GALLERY</div>
+                <div class="card-title">PHOTO GALLERY</div>
+                <div class="card-subtext-bottom">MOMENTS / BEHIND THE SCENES</div>
+            </div>
         </div>
 
-        <!-- Official Videos -->
-        <div class="card-banner" data-title="official videos">
-            <div class="card-info">
-                <span>Watch</span>
-                <h2>Official Videos</h2>
-                <p>MUSIC VIDEOS &nbsp;/&nbsp; VISUAL STORIES</p>
-            </div>
-            <div class="card-icon">🎬</div>
-        </div>
-
-        <!-- Shorts Videos -->
-        <div class="card-banner" data-title="shorts videos">
-            <div class="card-info">
-                <span>Quick Watch</span>
-                <h2>Shorts Videos</h2>
-                <p>SMALL CLIPS &nbsp;/&nbsp; BIG VIBES</p>
-            </div>
-            <div class="card-icon">📱</div>
-        </div>
-
-        <!-- Photo Gallery -->
-        <div class="card-banner" data-title="photo gallery">
-            <div class="card-info">
-                <span>The Gallery</span>
-                <h2>Photo Gallery</h2>
-                <p>MOMENTS &nbsp;/&nbsp; BEHIND THE SCENES</p>
-            </div>
-            <div class="card-icon">📸</div>
+        <!-- Footer -->
+        <div class="footer">
+            <img src="Crown_178898.png" alt="Crown" class="footer-crown">
+            <div class="footer-brand">UNDERGROUND EMPIRE</div>
+            <div class="footer-sub">Bohee Vexer & Flexer</div>
+            <div class="footer-copy">Real Music. Real Vibes. No Limits.</div>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <img src="crown.png" alt="Crown">
-        <h3>Underground Empire</h3>
-        <p>Bohee Vexer & Flexer</p>
-        <p>© 2012 – 2026 Underground Empire. All Rights Reserved.</p>
-        <div class="social-icons">
-            <a href="#" title="YouTube">▶</a>
-            <a href="#" title="Instagram">📷</a>
-            <a href="#" title="Facebook">f</a>
-        </div>
-    </footer>
-
-    <!-- JS Link -->
+    <!-- Link JS File -->
     <script src="script.js"></script>
 </body>
 </html>
