@@ -95,7 +95,7 @@ body {
 
 /* Hero Banner (Bohee.jpg) */
 .hero-banner {
-    width: 100%;
+    width: 160%;
     height: 340px;
     background-image: url('Bohee.jpg');
     background-size: cover;
