@@ -1,1 +1,46 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin Login | Underground Empire</title><link rel="stylesheet" href="style.css"><style>.admin-box{max-width:520px;margin:50px auto;padding:24px;border:1px solid #ff1838;border-radius:10px;background:#101010}.admin-box h1{font:30px 'Permanent Marker',cursive}.admin-box label{display:block;margin:14px 0 6px;color:#ddd}.admin-box input,.admin-box select{width:100%;padding:12px;background:#050505;border:1px solid #555;color:white;border-radius:5px}.admin-box button{margin-top:16px;padding:12px 18px;background:#ff1838;border:0;color:white;font-weight:bold;border-radius:5px}.warning{color:#ffbd28;font-size:13px;line-height:1.6}.hidden{display:none}.file-row{padding:10px;border-bottom:1px solid #333;word-break:break-all}</style></head><body><header class="topbar"><a class="brand" href="index.html"><span class="crown">♛</span><span class="brand-text">UNDERGROUND <b>EMPIRE</b></span></a><a href="index.html">← Back to website</a></header><main class="admin-box"><h1>ADMIN LOGIN</h1><p class="warning">Important: This is a front-end demo panel only. GitHub Pages cannot securely authenticate admins or accept public uploads. Do not put a real password here. A backend/storage service is required for secure, public uploads.</p><form id="loginForm"><label for="username">Username</label><input id="username" autocomplete="username" required><label for="password">Password</label><input id="password" type="password" autocomplete="current-password" required><button type="submit">Demo Login</button></form><div id="panel" class="hidden"><h2>Upload preview</h2><p class="warning">Selected files are only listed in this browser session; they are not published to your website.</p><label for="kind">Content type</label><select id="kind"><option>MP3 Song</option><option>Official Video</option><option>Short Video</option><option>Photo</option></select><label for="files">Choose audio, video or photo files</label><input id="files" type="file" multiple accept="audio/*,video/*,image/*"><div id="fileList"></div></div></main><script>const form=document.getElementById('loginForm'),panel=document.getElementById('panel');form.addEventListener('submit',e=>{e.preventDefault();alert('Demo panel opened. This is NOT secure authentication and does not publish uploads.');panel.classList.remove('hidden');});document.getElementById('files').addEventListener('change',e=>{const list=document.getElementById('fileList');list.innerHTML='';[...e.target.files].forEach(f=>{const d=document.createElement('div');d.className='file-row';d.textContent=f.name+' — '+Math.round(f.size/1024)+' KB';list.appendChild(d);});});</script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Underground Empire | Admin</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <header class="top"><a class="brand" href="index.html">♛ UNDERGROUND <span>EMPIRE</span></a><span>ADMIN PANEL</span></header>
+  <main class="wrap">
+    <section id="loginPanel" class="panel">
+      <p class="eyebrow">PRIVATE ACCESS</p><h1>Admin Login</h1>
+      <p>Sign in with the admin email you created in Firebase Authentication.</p>
+      <form id="loginForm">
+        <label>Email<input id="email" type="email" autocomplete="username" required></label>
+        <label>Password<input id="password" type="password" autocomplete="current-password" required></label>
+        <button class="primary" type="submit">LOGIN</button>
+      </form>
+      <p id="loginMessage" class="message" role="status"></p>
+    </section>
+    <section id="dashboard" class="hidden">
+      <div class="heading"><div><p class="eyebrow">CONTENT CONTROL</p><h1>Media Dashboard</h1><p id="signedInAs"></p></div><button id="logoutBtn" class="secondary">Log out</button></div>
+      <section class="panel">
+        <h2>Upload new media</h2>
+        <form id="uploadForm">
+          <label>Title<input id="title" maxlength="120" required placeholder="Song / photo / video title"></label>
+          <label>Type<select id="kind" required><option value="photo">Photo / Gallery</option><option value="audio">MP3 Song</option><option value="video">Official Video / Short</option></select></label>
+          <label>Choose file<input id="file" type="file" accept="image/*" required></label>
+          <p class="hint">Choose one file at a time. Keep videos reasonably sized; Firebase usage and billing limits apply.</p>
+          <div id="preview" class="preview">File preview appears here</div>
+          <button class="primary" type="submit">UPLOAD AS DRAFT</button>
+        </form>
+        <p id="uploadMessage" class="message" role="status"></p>
+      </section>
+      <section class="panel">
+        <div class="heading"><h2>Drafts & published media</h2><button id="refreshBtn" class="secondary" type="button">Refresh</button></div>
+        <div id="mediaList" class="media-list"><p>Loading media…</p></div>
+      </section>
+    </section>
+  </main>
+  <footer>Underground Empire · Private admin area</footer>
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
