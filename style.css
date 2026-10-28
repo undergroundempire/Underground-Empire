@@ -1,4 +1,4 @@
-ft
+
 /* UNDERGROUND EMPIRE - COMPLETE STYLE */
 * {
   box-sizing: border-box;
@@ -25,8 +25,8 @@ a {
 
 .topbar {
   width: 100%;
-  min-height: 20px;
-  padding: 14px 5%;
+  min-height: 10px;
+  padding: 10px 5%;
   display: flex;
   align-items: center;
   justify-content: space-between;
