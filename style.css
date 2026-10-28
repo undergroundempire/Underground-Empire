@@ -51,8 +51,8 @@ a {
 }
 
 .hero-crown {
-  width: 42px;
-  height: 42px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   animation: crown-spin 8s linear infinite;
 }
