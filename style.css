@@ -1,4 +1,4 @@
-
+ft
 /* UNDERGROUND EMPIRE - COMPLETE STYLE */
 * {
   box-sizing: border-box;
@@ -92,8 +92,8 @@ a {
 
 .hero {
   width: 100%;
-  min-height: 0;
-  padding: 35px 5%;
+  min-height:80;
+  padding: 20px 2%;
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   align-items: center;
