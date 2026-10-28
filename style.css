@@ -59,7 +59,7 @@ a {
 
 @keyframes crown-spin {
   from { transform: rotate(0deg); }
-  to { transform: rotate(90deg); }
+  to { transform: rotate(0deg); }
 }
 
 .nav {
@@ -108,8 +108,8 @@ a {
 
 .hero-content h1 {
   font-size: clamp(32px, 5vw, 66px);
-  line-height: 1.08;
-  font-weight: 900;
+  line-height: 08;
+  font-weight: 700;
   letter-spacing: 1px;
   overflow-wrap: anywhere;
   text-shadow: 0 0 12px #ff202055;
@@ -117,12 +117,12 @@ a {
 
 .underground {
   display: block;
-  color: #ffffff;
+  color: #white;
 }
 
 .empire {
   display: block;
-  color: #ff2525;
+  color: #red;
   text-shadow: 0 0 14px #ff000066;
 }
 
