@@ -1,52 +1,31 @@
 
-document.addEventListener("DOMContentLoaded", function () {
-  const menuBtn = document.getElementById("menuBtn");
-  const mainNav = document.getElementById("mainNav");
-  const songSearch = document.getElementById("songSearch");
-  const songList = document.getElementById("songList");
-  const year = document.getElementById("year");
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
 
-  // Current copyright year
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
+if (menuToggle && mainNav) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mainNav.classList.toggle("open");
 
-  // Mobile navigation menu
-  if (menuBtn && mainNav) {
-    menuBtn.addEventListener("click", function () {
-      const isOpen = mainNav.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Close navigation" : "Open navigation"
+    );
+    menuToggle.textContent = isOpen ? "×" : "☰";
+  });
 
-      menuBtn.setAttribute("aria-expanded", String(isOpen));
-      menuBtn.setAttribute(
-        "aria-label",
-        isOpen ? "Close menu" : "Open menu"
-      );
-
-      menuBtn.textContent = isOpen ? "✕" : "☰";
+  mainNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mainNav.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Open navigation");
+      menuToggle.textContent = "☰";
     });
+  });
+}
 
-    mainNav.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        mainNav.classList.remove("open");
-        menuBtn.setAttribute("aria-expanded", "false");
-        menuBtn.setAttribute("aria-label", "Open menu");
-        menuBtn.textContent = "☰";
-      });
-    });
-  }
+const year = document.getElementById("year");
 
-  // Search songs by title or artist
-  if (songSearch && songList) {
-    songSearch.addEventListener("input", function () {
-      const query = songSearch.value.trim().toLowerCase();
-      const cards = songList.querySelectorAll(".content-card");
-
-      cards.forEach(function (card) {
-        const text = card.textContent.toLowerCase();
-        card.hidden = !text.includes(query);
-      });
-    });
-  }
-
-  // Crown animation is handled by CSS.
-});
+if (year) {
+  year.textContent = new Date().getFullYear();
+}
