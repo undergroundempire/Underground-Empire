@@ -342,4 +342,54 @@ input[type="search"] {
   .content-card {
     padding: 18px;
   }
+
+
+
+  
+/* FINAL PHOTO SIZE FIX */
+.hero {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 0 !important;
 }
+
+.hero-content {
+  flex: 0 0 40% !important;
+  width: 40% !important;
+}
+
+.hero-image {
+  flex: 0 0 60% !important;
+  width: 60% !important;
+  height: auto !important;
+  min-width: 0 !important;
+  overflow: visible !important;
+}
+
+.hero-image img.banner-photo {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    flex-direction: column !important;
+  }
+
+  .hero-content,
+  .hero-image {
+    flex: 0 0 100% !important;
+    width: 100% !important;
+  }
+
+
+
+
+  
