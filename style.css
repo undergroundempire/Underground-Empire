@@ -418,3 +418,9 @@ a {
     flex-direction: column;
   }
 }
+
+
+
+.hero-content p {
+  margin-top: 200px;
+}
