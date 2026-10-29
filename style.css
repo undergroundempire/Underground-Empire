@@ -423,4 +423,82 @@ a {
 
 .hero-content p {
   margin-top: 400px;
+
+
 }
+
+/* UNDERGROUND EMPIRE INTRO */
+#intro-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: #050505;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  transition: opacity 0.35s ease;
+}
+
+#intro-screen.intro-hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-logo {
+  text-align: center;
+  animation: introGlow 1.2s ease-in-out infinite alternate;
+}
+
+.intro-crown {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  animation: crownSpin 3s linear infinite;
+}
+
+.intro-logo h1 {
+  color: white;
+  font-size: 30px;
+  line-height: 1.05;
+  letter-spacing: 2px;
+  margin: 12px 0;
+}
+
+.intro-logo h1 span {
+  color: #ff1616;
+}
+
+.intro-logo p {
+  color: #ddd;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+#enter-btn {
+  background: transparent;
+  color: white;
+  border: 1px solid #ff1616;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  letter-spacing: 2px;
+}
+
+@keyframes crownSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes introGlow {
+  from { text-shadow: 0 0 4px #ff1616; }
+  to { text-shadow: 0 0 15px #ff1616; }
+}
+
+
+
+
+
+
+
