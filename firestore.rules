@@ -1,0 +1,17 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null && request.auth.uid == "PASTE_ADMIN_UID";
+    }
+    match /media/{mediaId} {
+      allow read: if isAdmin() || resource.data.status == "published";
+      allow create: if isAdmin()
+        && request.resource.data.createdBy == request.auth.uid
+        && request.resource.data.status == "draft";
+      allow update: if isAdmin()
+        && request.resource.data.createdBy == resource.data.createdBy;
+      allow delete: if isAdmin();
+    }
+  }
+}

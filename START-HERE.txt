@@ -1,0 +1,24 @@
+UNDERGROUND EMPIRE — WEBSITE PACKAGE
+
+FAST WEBSITE + CINEMATIC GIF INTRO
+
+UPLOAD CONTENTS
+1. Upload the CONTENTS of this folder to the ROOT of your GitHub Pages repository (same level as index.html).
+2. Keep the assets folder.
+3. Add your own Bohee photo as: bohee.jpg (same folder as index.html).
+4. Add your crown image as: Crown.png (same folder as index.html).
+5. Add your original audio as: Underground Empire with intro.mp3 (same folder as index.html).
+
+IMPORTANT
+- The animated intro artwork is optimized as WebP to reduce loading time.
+- Visitors can tap ENTER THE EMPIRE to start the MP3 (mobile browsers require a tap for sound). They can also Skip intro.
+- The site automatically opens after 4.5 seconds if the visitor does not tap.
+- Your Bohee photo, Crown.png and MP3 were not present in the ZIP files available for this build, so add your original files using the exact names above.
+- Admin upload requires your own Firebase project settings. Open firebase-config.js and follow SETUP-ANDROID.md. Do not publish Firebase admin credentials.
+- For the fastest first load, keep media files reasonably compressed and avoid uploading huge uncompressed videos.
+
+FILES
+index.html, style.css, script.js — website
+assets/intro-animation.webp — optimized animated intro
+admin.html, admin.js, admin.css, firebase-config.js — admin interface
+public-media.js/css and security rules — Firebase media integration
