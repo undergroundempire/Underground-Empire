@@ -61,6 +61,12 @@ a {
 
 /* INTRO PHOTO BACKGROUND */
 
+.intro {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
 .intro-photo {
   position: absolute;
   inset: 0;
@@ -71,20 +77,13 @@ a {
   z-index: 0;
 }
 
-/* INTRO DARK OVERLAY */
-
 .intro-glow {
   position: absolute;
   inset: 0;
   z-index: 1;
-
-  background:
-    radial-gradient(
-      ellipse,
-      rgba(75,16,25,.45),
-      rgba(2,2,2,.70)
-    );
-
+  background: rgba(0,0,0,0.35);
+  pointer-events: none;
+}
   pointer-events: none;
 }
 
