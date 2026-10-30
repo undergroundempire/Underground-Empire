@@ -43,7 +43,7 @@
     }
   }
 
-  // ENTER button
+// ENTER button
 if (enterBtn) {
   enterBtn.addEventListener("click", async () => {
     if (audio) {
@@ -66,7 +66,6 @@ if (skipBtn) {
   skipBtn.addEventListener("click", () => {
     closeIntro(true);
   });
-}
   }
 
   // SKIP button
