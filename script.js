@@ -32,7 +32,6 @@
 
     intro.classList.add("hidden");
     intro.setAttribute("aria-hidden", "true");
-
     intro.style.opacity = "0";
     intro.style.visibility = "hidden";
     intro.style.pointerEvents = "none";
@@ -43,29 +42,19 @@
     }
   }
 
-// ENTER button
-if (enterBtn) {
-  enterBtn.addEventListener("click", async () => {
-    if (audio) {
-      audio.volume = 1;
-      audio.currentTime = 0;
-
-      try {
-        await audio.play();
-      } catch (error) {
-        console.log("Audio error:", error);
+  // ENTER button
+  if (enterBtn) {
+    enterBtn.addEventListener("click", () => {
+      if (audio) {
+        audio.volume = 1;
+        audio.currentTime = 0;
+        audio.play().catch(error => {
+          console.log("Audio error:", error);
+        });
       }
-    }
 
-    closeIntro(false);
-  });
-}
-
-// SKIP button
-if (skipBtn) {
-  skipBtn.addEventListener("click", () => {
-    closeIntro(true);
-  });
+      closeIntro(false);
+    });
   }
 
   // SKIP button
@@ -85,17 +74,5 @@ if (skipBtn) {
   if (year) {
     year.textContent = new Date().getFullYear();
   }
-
-  // intro audio 
-  const audio = document.getElementById("introAudio");
-
-document.getElementById("enterBtn")?.addEventListener("click", function () {
-  if (audio) {
-    audio.currentTime = 0;
-    audio.play().catch(error => {
-      console.log("Audio error:", error);
-    });
-  }
-});
 
 })();
