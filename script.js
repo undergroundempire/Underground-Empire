@@ -86,4 +86,16 @@ if (skipBtn) {
     year.textContent = new Date().getFullYear();
   }
 
+  // intro audio 
+  const audio = document.getElementById("introAudio");
+
+document.getElementById("enterBtn")?.addEventListener("click", function () {
+  if (audio) {
+    audio.currentTime = 0;
+    audio.play().catch(error => {
+      console.log("Audio error:", error);
+    });
+  }
+});
+
 })();
