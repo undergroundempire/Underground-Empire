@@ -496,7 +496,22 @@ a {
   to { text-shadow: 0 0 15px #ff1616; }
 }
 
+.brand .logo-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 0.85;
+}
 
+.brand .underground {
+  color: white;
+}
+
+.brand .empire {
+  color: red;
+  margin-left: 5.5em;
+  margin-top: -2px;
+}
 
 
 
