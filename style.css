@@ -640,3 +640,10 @@ footer a {
     margin: 14px 12px;
   }
 }
+
+#intro.hidden {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  display: none !important;
+}
