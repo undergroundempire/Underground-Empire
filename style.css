@@ -1,4 +1,4 @@
-
+ni
 /* =====================================
    UNDERGROUND EMPIRE - MAIN STYLE
 ===================================== */
@@ -641,9 +641,26 @@ footer a {
   }
 }
 
+/* INTRO FULL SCREEN FIX */
+#intro {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100vh !important;
+  margin: 0 !important;
+  z-index: 99999 !important;
+}
+
+/* INTRO CLOSE */
 #intro.hidden {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
   display: none !important;
+}
+
+/* WEBSITE HEADER NORMAL POSITION */
+header {
+  position: relative;
+  margin-top: 0 !important;
 }
