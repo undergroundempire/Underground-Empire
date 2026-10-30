@@ -1,23 +1,31 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#050505">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+
 <meta name="description" content="Underground Empire — Bohee Official. Real music, real vibes, underground culture.">
+
 <title>Underground Empire | Bohee Official</title>
-<link rel="preload" as="image" href="Crown.png">
+
+<link rel="preload" as="image" href="bohee.jpg">
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+<!-- INTRO SCREEN -->
 <div class="intro" id="intro">
+
+  <img class="intro-photo" src="bohee.jpg" alt="">
 
   <div class="intro-glow"></div>
 
-  <img
-    class="intro-art"
-    src="Crown.png"
-    alt="Underground Empire Crown"
-  >
+  <img class="intro-art"
+       src="assets/intro-animation.webp"
+       alt="Underground Empire">
 
   <div class="intro-title">
     <span>UNDERGROUND</span>
@@ -25,7 +33,7 @@
   </div>
 
   <button id="enterBtn" class="enter-btn" type="button">
-    ENTER THE EMPIRE ➜
+    ENTER THE EMPIRE <span>➜</span>
   </button>
 
   <button id="skipIntro" class="skip-btn" type="button">
@@ -34,49 +42,206 @@
 
 </div>
 
-<audio id="introAudio" preload="auto" src="./intro.mp3"></audio>
-<header class="topbar"><a class="brand" href="#home"><img src="Crown.png" alt="" onerror="this.style.display='none'"><span>UNDERGROUND <b>EMPIRE</b></span></a>
-<button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
-<nav id="nav"><a href="#home">Home</a><a href="#songs">MP3 Songs</a><a href="#videos">Videos</a><a href="#shorts">Shorts</a><a href="#photos">Gallery</a><a href="#upcoming">Upcoming</a><a href="#about">About</a></nav>
+<audio id="introAudio"
+       preload="none"
+       src="Underground Empire with intro.mp3">
+</audio>
+
+
+<!-- HEADER -->
+<header class="topbar">
+
+  <a class="brand" href="#home">
+    <img src="Crown.png" alt="Crown">
+    <span>UNDERGROUND <b>EMPIRE</b></span>
+  </a>
+
+  <button class="menu-btn"
+          id="menuBtn"
+          aria-label="Open menu"
+          aria-expanded="false">
+    ☰
+  </button>
+
+  <nav id="nav">
+    <a href="#home">Home</a>
+    <a href="#songs">MP3 Songs</a>
+    <a href="#videos">Videos</a>
+    <a href="#shorts">Shorts</a>
+    <a href="#photos">Gallery</a>
+    <a href="#upcoming">Upcoming</a>
+    <a href="#about">About</a>
+  </nav>
 
 </header>
 
-<!-- BANNER PHOTO -->
-<section class="hero-banner">
 
-  <img src="Bohee.jpg"
-       alt="Bohee Official Banner"
-       class="banner-photo">
+<!-- MAIN WEBSITE -->
+<main id="home">
 
-  <div class="banner-overlay"></div>
+  <!-- HERO BANNER -->
+  <section class="hero">
 
-  <div class="banner-content">
+    <img class="hero-photo"
+         src="bohee.jpg"
+         alt="Bohee Official Banner">
 
-    <div class="empire-logo">
-      <img src="Crown.png"
-           class="banner-crown"
+    <div class="hero-bg"></div>
+
+    <div class="hero-inner">
+
+      <img class="hero-crown"
+           src="Crown.png"
            alt="Crown">
 
-      <div class="logo-text">
-        <h1>UNDERGROUND</h1>
-        <h2>EMPIRE</h2>
-      </div>
+      <p class="eyebrow">PRESENTS</p>
+
+      <h1>
+        UNDERGROUND <em>EMPIRE</em>
+      </h1>
+
+      <p class="artist">
+        BOHEE VEXER &amp; FLEXER
+      </p>
+
+      <p class="tagline">
+        REAL MUSIC / REAL VIBES / UNDERGROUND CULTURE
+      </p>
+
+      <strong class="no-limits">
+        — NO LIMITS —
+      </strong>
+
     </div>
 
-    <p class="banner-tagline">
-      REAL MUSIC / REAL VIBES / UNDERGROUND CULTURE
-    </p>
+  </section>
 
-    <h3 class="no-limits">— NO LIMITS —</h3>
+
+  <!-- QUICK LINKS -->
+  <section class="tiles">
+
+    <a class="tile" href="#songs">
+      <i>♫</i>
+      <span>
+        <small>THE SOUND</small>
+        <b>MP3 SONGS</b>
+      </span>
+      <strong>›</strong>
+    </a>
+
+    <a class="tile" href="#videos">
+      <i>▶</i>
+      <span>
+        <small>WATCH</small>
+        <b>OFFICIAL VIDEOS</b>
+      </span>
+      <strong>›</strong>
+    </a>
+
+    <a class="tile" href="#shorts">
+      <i>ϟ</i>
+      <span>
+        <small>QUICK WATCH</small>
+        <b>SHORT VIDEOS</b>
+      </span>
+      <strong>›</strong>
+    </a>
+
+    <a class="tile" href="#photos">
+      <i>▧</i>
+      <span>
+        <small>THE GALLERY</small>
+        <b>PHOTO GALLERY</b>
+      </span>
+      <strong>›</strong>
+    </a>
+
+  </section>
+
+
+  <!-- SONGS AND VIDEOS -->
+  <div class="content-grid">
+
+    <section class="panel" id="songs">
+      <h2>LATEST <em>RELEASES</em></h2>
+
+      <div id="public-audio" class="media-grid">
+        <p class="empty">Your songs will appear here.</p>
+      </div>
+    </section>
+
+    <section class="panel" id="videos">
+      <h2>OFFICIAL <em>VIDEOS</em></h2>
+
+      <div id="public-videos" class="media-grid">
+        <p class="empty">Your videos will appear here.</p>
+      </div>
+    </section>
 
   </div>
-</section>
-  
-<main id="home">
-<section class="hero"><div class="hero-bg"></div><div class="hero-inner"><img class="hero-crown" src="Crown.png" alt="Crown" onerror="this.style.display='none'"><p class="eyebrow">PRESENTS</p><h1>UNDERGROUND <em>EMPIRE</em></h1><p class="artist">BOHEE VEXER &amp; FLEXER</p><p class="tagline">REAL MUSIC / REAL VIBES / UNDERGROUND CULTURE</p><strong class="no-limits">— NO LIMITS —</strong></div></section>
-<section class="tiles"><a class="tile" href="#songs"><i>♫</i><span><small>THE SOUND</small><b>MP3 SONGS</b></span><strong>›</strong></a><a class="tile" href="#videos"><i>▶</i><span><small>WATCH</small><b>OFFICIAL VIDEOS</b></span><strong>›</strong></a><a class="tile" href="#shorts"><i>ϟ</i><span><small>QUICK WATCH</small><b>SHORT VIDEOS</b></span><strong>›</strong></a><a class="tile" href="#photos"><i>▧</i><span><small>THE GALLERY</small><b>PHOTO GALLERY</b></span><strong>›</strong></a></section>
-<div class="content-grid"><section class="panel" id="songs"><h2>LATEST <em>RELEASES</em></h2><div id="public-audio" class="media-grid"><p class="empty">Your songs will appear here.</p></div></section><section class="panel" id="videos"><h2>OFFICIAL <em>VIDEOS</em></h2><div id="public-videos" class="media-grid"><p class="empty">Your videos will appear here.</p></div></section></div>
-<section class="panel section" id="shorts"><h2>SHORTS <em>VIDEOS</em></h2><p>Quick clips. Big vibes.</p></section><section class="panel section" id="photos"><h2>PHOTO <em>GALLERY</em></h2><div id="public-photos" class="media-grid"><p class="empty">Your photos will appear here.</p></div></section><section class="panel section" id="upcoming"><h2>COMING <em>SOON</em></h2><p>New releases and announcements will appear here.</p></section><section class="panel section" id="about"><h2>ABOUT <em>THE EMPIRE</em></h2><p>Underground Empire — real music, real vibes, underground culture.</p></section>
-</main><footer><div class="footer-brand">♛ UNDERGROUND <em>EMPIRE</em></div><p>Bohee Vexer &amp; Flexer</p><p>© 2012–2026 Underground Empire. All Rights Reserved.</p><a href="admin.html">Admin Login</a></footer>
-<link rel="stylesheet" href="public-media.css"><script type="module" src="public-media.js"></script><script src="script.js" defer></script>
-</body></html>
+
+
+  <!-- SHORTS -->
+  <section class="panel section" id="shorts">
+    <h2>SHORTS <em>VIDEOS</em></h2>
+    <p>Quick clips. Big vibes.</p>
+  </section>
+
+
+  <!-- PHOTO GALLERY -->
+  <section class="panel section" id="photos">
+    <h2>PHOTO <em>GALLERY</em></h2>
+
+    <div id="public-photos" class="media-grid">
+      <p class="empty">Your photos will appear here.</p>
+    </div>
+  </section>
+
+
+  <!-- UPCOMING -->
+  <section class="panel section" id="upcoming">
+    <h2>COMING <em>SOON</em></h2>
+    <p>New releases and announcements will appear here.</p>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section class="panel section" id="about">
+    <h2>ABOUT <em>THE EMPIRE</em></h2>
+    <p>
+      Underground Empire — real music,
+      real vibes, underground culture.
+    </p>
+  </section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="footer-brand">
+    ♛ UNDERGROUND <em>EMPIRE</em>
+  </div>
+
+  <p>Bohee Vexer &amp; Flexer</p>
+
+  <p>
+    © 2012–2026 Underground Empire.
+    All Rights Reserved.
+  </p>
+
+  <a href="admin.html">Admin Login</a>
+
+</footer>
+
+
+<!-- EXISTING MEDIA AND WEBSITE SCRIPTS -->
+<link rel="stylesheet" href="public-media.css">
+
+<script type="module" src="public-media.js"></script>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
