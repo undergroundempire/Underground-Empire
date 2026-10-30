@@ -44,17 +44,29 @@
   }
 
   // ENTER button
-  if (enterBtn) {
-    enterBtn.addEventListener("click", () => {
-      closeIntro(false);
+if (enterBtn) {
+  enterBtn.addEventListener("click", async () => {
+    if (audio) {
+      audio.volume = 1;
+      audio.currentTime = 0;
 
-      if (audio) {
-        audio.volume = 1;
-        audio.play().catch(error => {
-          console.log("Audio error:", error);
-        });
+      try {
+        await audio.play();
+      } catch (error) {
+        console.log("Audio error:", error);
       }
-    });
+    }
+
+    closeIntro(false);
+  });
+}
+
+// SKIP button
+if (skipBtn) {
+  skipBtn.addEventListener("click", () => {
+    closeIntro(true);
+  });
+}
   }
 
   // SKIP button
