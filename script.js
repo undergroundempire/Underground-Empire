@@ -1,78 +1,62 @@
-
-/* UNDERGROUND EMPIRE - MAIN JAVASCRIPT */
-
 (() => {
-  "use strict";
+  'use strict';
 
-  const menuBtn = document.getElementById("menuBtn");
-  const nav = document.getElementById("nav");
-  const intro = document.getElementById("intro");
-  const audio = document.getElementById("introAudio");
-  const enterBtn = document.getElementById("enterBtn");
-  const skipBtn = document.getElementById("skipIntro");
+  const menuBtn = document.getElementById('menuBtn');
+  const nav = document.getElementById('nav');
 
-  // Mobile menu
   if (menuBtn && nav) {
-    menuBtn.addEventListener("click", () => {
-      const opened = nav.classList.toggle("open");
-      menuBtn.setAttribute("aria-expanded", String(opened));
+    menuBtn.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(isOpen));
     });
 
-    nav.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        nav.classList.remove("open");
-        menuBtn.setAttribute("aria-expanded", "false");
+    nav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded', 'false');
       });
     });
   }
 
-  // Close intro and show website
-  function closeIntro(stopAudio = false) {
-    if (!intro) return;
+  const intro = document.getElementById('intro');
+  const audio = document.getElementById('introAudio');
+  let introClosed = false;
 
-    intro.classList.add("hidden");
-    intro.setAttribute("aria-hidden", "true");
-    intro.style.opacity = "0";
-    intro.style.visibility = "hidden";
-    intro.style.pointerEvents = "none";
+  function closeIntro() {
+    if (introClosed) return;
+    introClosed = true;
 
-    if (stopAudio && audio) {
+    if (intro) intro.classList.add('hidden');
+
+    if (audio) {
       audio.pause();
       audio.currentTime = 0;
     }
   }
 
-  // ENTER button
+  const skipBtn = document.getElementById('skipIntro');
+  const enterBtn = document.getElementById('enterBtn');
+
+  if (skipBtn) {
+    skipBtn.addEventListener('click', closeIntro);
+  }
+
   if (enterBtn) {
-    enterBtn.addEventListener("click", () => {
+    enterBtn.addEventListener('click', async () => {
       if (audio) {
-        audio.volume = 1;
-        audio.currentTime = 0;
-        audio.play().catch(error => {
-          console.log("Audio error:", error);
-        });
+        try {
+          audio.currentTime = 0;
+          await audio.play();
+        } catch (error) {
+          // Audio may be unavailable.
+        }
       }
 
-      closeIntro(false);
+      window.setTimeout(closeIntro, 2200);
     });
   }
 
-  // SKIP button
-  if (skipBtn) {
-    skipBtn.addEventListener("click", () => {
-      closeIntro(true);
-    });
-  }
-
-  // Automatic safety close after 12 seconds
-  window.setTimeout(() => {
-    closeIntro(true);
-  }, 12000);
-
-  // Footer year
-  const year = document.getElementById("year");
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
-
+  // Backup: intro never blocks the website.
+  window.setTimeout(closeIntro, 5000);
 })();
+        
