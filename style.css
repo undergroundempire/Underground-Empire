@@ -62,9 +62,13 @@ a {
 /* INTRO PHOTO BACKGROUND */
 
 .intro {
-  position: relative;
+/* INTRO BACKGROUND LAYERS */
+.intro {
+  position: fixed;
+  isolation: isolate;
   overflow: hidden;
   background: #000;
+  z-index: 99999;
 }
 
 .intro-photo {
@@ -73,19 +77,24 @@ a {
   width: 100%;
   height: 100%;
   object-fit: contain;
-  object-position: center;
-   object-position: center 20%;
-  z-index: 0;
+  object-position: center 20%;
+  z-index: -2;
 }
 
 .intro-glow {
   position: absolute;
   inset: 0;
-  z-index: 1;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0,0,0,0.25);
+  z-index: -1;
   pointer-events: none;
 }
-  pointer-events: none;
+
+.intro-art,
+.intro-title,
+.enter-btn,
+.skip-btn {
+  position: relative;
+  z-index: 2;
 }
 
 /* INTRO ART */
