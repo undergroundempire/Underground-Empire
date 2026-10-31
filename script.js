@@ -1,44 +1,35 @@
-
 (() => {
-  const menuBtn = document.getElementById('menuBtn');
-  const nav = document.getElementById('nav');
+  const intro = document.getElementById("intro");
+  const audio = document.getElementById("introAudio");
+  const enterBtn = document.getElementById("enterBtn");
+  const skipBtn = document.getElementById("skipIntro");
 
-  // Mobile menu
-  menuBtn?.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    menuBtn.setAttribute('aria-expanded', String(open));
-  });
+  const menuBtn = document.getElementById("menuBtn");
+  const nav = document.getElementById("nav");
 
-  nav?.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      nav.classList.remove('open');
-      menuBtn?.setAttribute('aria-expanded', 'false');
-    });
-  });
-
-  const intro = document.getElementById('intro');
-const audio = document.getElementById('introAudio');
-const enterBtn = document.getElementById('enterBtn');
-const skipBtn = document.getElementById('skipIntro');
-
-enterBtn?.addEventListener('click', async () => {
-  if (!audio) {
-    intro?.classList.add('hidden');
-    return;
+  function openWebsite() {
+    if (intro) {
+      intro.classList.add("hidden");
+    }
   }
 
-  try {
-    audio.currentTime = 0;
-    await audio.play();
-  } catch (error) {
-    console.log('Audio error:', error);
-  }
+  enterBtn?.addEventListener("click", () => {
+    if (audio) {
+      audio.play().catch(error => {
+        console.log("Audio error:", error);
+      });
+    }
 
-  intro?.classList.add('hidden');
-});
+    openWebsite();
+  });
 
-skipBtn?.addEventListener('click', () => {
-  audio?.pause();
-  if (audio) audio.currentTime = 0;
-  intro?.classList.add('hidden');
-});
+  skipBtn?.addEventListener("click", () => {
+    audio?.pause();
+    openWebsite();
+  });
+
+  menuBtn?.addEventListener("click", () => {
+    const isOpen = nav?.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", String(!!isOpen));
+  });
+})();
