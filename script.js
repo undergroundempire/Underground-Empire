@@ -1,54 +1,59 @@
 
 (() => {
- const menuBtn = document.getElementById('menuBtn');
- const nav = document.getElementById('nav');
+  const menuBtn = document.getElementById('menuBtn');
+  const nav = document.getElementById('nav');
 
- menuBtn?.addEventListener('click', () => {
-   const open = nav.classList.toggle('open');
-   menuBtn.setAttribute('aria-expanded', String(open));
- });
+  // Mobile menu
+  menuBtn?.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+  });
 
- nav?.querySelectorAll('a').forEach(a =>
-   a.addEventListener('click', () => {
-     nav.classList.remove('open');
-     menuBtn?.setAttribute('aria-expanded', 'false');
-   })
- );
+  nav?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      menuBtn?.setAttribute('aria-expanded', 'false');
+    });
+  });
 
- const intro = document.getElementById('intro');
- const audio = document.getElementById('introAudio');
- const enterBtn = document.getElementById('enterBtn');
- const skipBtn = document.getElementById('skipIntro');
+  // Intro audio
+  const intro = document.getElementById('intro');
+  const audio = document.getElementById('introAudio');
+  const enterBtn = document.getElementById('enterBtn');
+  const skipBtn = document.getElementById('skipIntro');
 
- let entered = false;
+  let entered = false;
 
- const closeIntro = () => {
-   intro?.classList.add('hidden');
- };
+  const closeIntro = () => {
+    intro?.classList.add('hidden');
+  };
 
- enterBtn?.addEventListener('click', async () => {
-   if (entered) return;
-   entered = true;
+  enterBtn?.addEventListener('click', async () => {
+    if (entered) return;
+    entered = true;
 
-   if (audio) {
-     try {
-       audio.currentTime = 0;
-       await audio.play();
+    if (!audio) {
+      closeIntro();
+      return;
+    }
 
-       audio.onended = closeIntro;
-     } catch (e) {
-       closeIntro();
-     }
-   } else {
-     closeIntro();
-   }
- });
+    try {
+      audio.currentTime = 0;
+      await audio.play();
 
- skipBtn?.addEventListener('click', () => {
-   if (audio) {
-     audio.pause();
-     audio.currentTime = 0;
-   }
-   closeIntro();
- });
+      audio.addEventListener('ended', closeIntro, { once: true });
+
+    } catch (error) {
+      console.log('Intro audio error:', error);
+      closeIntro();
+    }
+  });
+
+  // Skip intro
+  skipBtn?.addEventListener('click', () => {
+    audio?.pause();
+    if (audio) audio.currentTime = 0;
+    closeIntro();
+  });
+
 })();
