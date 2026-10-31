@@ -16,44 +16,29 @@
     });
   });
 
-  // Intro audio
   const intro = document.getElementById('intro');
-  const audio = document.getElementById('introAudio');
-  const enterBtn = document.getElementById('enterBtn');
-  const skipBtn = document.getElementById('skipIntro');
+const audio = document.getElementById('introAudio');
+const enterBtn = document.getElementById('enterBtn');
+const skipBtn = document.getElementById('skipIntro');
 
-  let entered = false;
-
-  const closeIntro = () => {
+enterBtn?.addEventListener('click', async () => {
+  if (!audio) {
     intro?.classList.add('hidden');
-  };
+    return;
+  }
 
-  enterBtn?.addEventListener('click', async () => {
-    if (entered) return;
-    entered = true;
+  try {
+    audio.currentTime = 0;
+    await audio.play();
+  } catch (error) {
+    console.log('Audio error:', error);
+  }
 
-    if (!audio) {
-      closeIntro();
-      return;
-    }
+  intro?.classList.add('hidden');
+});
 
-    try {
-      audio.currentTime = 0;
-      await audio.play();
-
-      audio.addEventListener('ended', closeIntro, { once: true });
-
-    } catch (error) {
-      console.log('Intro audio error:', error);
-      closeIntro();
-    }
-  });
-
-  // Skip intro
-  skipBtn?.addEventListener('click', () => {
-    audio?.pause();
-    if (audio) audio.currentTime = 0;
-    closeIntro();
-  });
-
-})();
+skipBtn?.addEventListener('click', () => {
+  audio?.pause();
+  if (audio) audio.currentTime = 0;
+  intro?.classList.add('hidden');
+});
