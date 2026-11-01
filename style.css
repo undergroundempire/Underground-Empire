@@ -123,3 +123,37 @@ color:#bbb;font-size:10px;font-weight:700;letter-spacing:1.2px;cursor:pointer
 .brand{font-size:13px}
 .admin-login{font-size:10px;padding:9px 12px}
 }
+/* INTRO FIX */
+.intro-art {
+  width: 135px !important;
+  height: 115px !important;
+  object-fit: contain;
+  margin-bottom: 28px !important;
+}
+
+.enter-btn {
+  position: relative;
+  transform: none !important;
+  border-radius: 50px !important;
+  min-height: 58px;
+  width: min(78vw, 320px);
+}
+
+.skip-btn {
+  position: fixed !important;
+  right: 14px !important;
+  bottom: 20px !important;
+  left: auto !important;
+  top: auto !important;
+  width: auto !important;
+  padding: 7px 12px !important;
+  font-size: 10px !important;
+  border-radius: 30px !important;
+  z-index: 110 !important;
+}
+
+.intro.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
