@@ -117,46 +117,13 @@ em{color:#ed1717;font-style:normal}</head> </style>
   <a href="admin.html">Admin Login</a>
 </footer>
 
-<script>
-(function(){
-  const intro = document.getElementById("intro");
-  const audio = document.getElementById("introAudio");
-  const enterBtn = document.getElementById("enterBtn");
-  const skipBtn = document.getElementById("skipIntro");
-  const menuBtn = document.getElementById("menuBtn");
-  const nav = document.getElementById("nav");
 
-  function closeIntro(){
-    intro.classList.add("hidden");
-  }
 
-  enterBtn.addEventListener("click", function(){
-    closeIntro();
-    audio.currentTime = 0;
-    audio.play().catch(function(error){
-      console.log("Audio could not play:", error);
-    });
-  });
 
-  skipBtn.addEventListener("click", function(){
-    audio.pause();
-    audio.currentTime = 0;
-    closeIntro();
-  });
 
-  menuBtn.addEventListener("click", function(){
-    const opened = nav.classList.toggle("open");
-    menuBtn.setAttribute("aria-expanded", String(opened));
-  });
 
-  nav.querySelectorAll("a").forEach(function(link){
-    link.addEventListener("click", function(){
-      nav.classList.remove("open");
-      menuBtn.setAttribute("aria-expanded","false");
-    });
-  });
-})();
-</script>
+
+  
 
 </body>
 </html>
