@@ -1,14 +1,14 @@
-/* STATIC INTRO — NO ANIMATION */
+/* STATIC INTRO - NO ANIMATION */
 .intro {
   position: fixed;
   inset: 0;
-  z-index: 100;
+  z-index: 9999;
   background: #020202;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 22px;
 }
 
 .intro.hidden {
@@ -17,69 +17,44 @@
 
 .intro-glow {
   position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    ellipse,
-    #4b1019 0%,
-    #100508 48%,
-    #020202 80%
-  );
-  pointer-events: none;
+  width: 280px;
+  height: 280px;
+  background: #d00000;
+  filter: blur(120px);
+  opacity: .25;
 }
 
 .intro-art {
   position: relative;
-  width: min(94vw, 1000px);
-  max-height: 58vh;
+  width: min(65vw, 300px);
+  max-height: 45vh;
   object-fit: contain;
+  animation: none;
+  transform: none;
   filter: none;
-}
-
-.intro-title {
-  position: relative;
-  text-align: center;
-  font-size: clamp(28px, 6vw, 58px);
-  font-weight: 1000;
-  letter-spacing: 3px;
-  text-shadow: none;
-}
-
-.intro-title span {
-  display: block;
-  color: #eee;
-}
-
-.intro-title b {
-  display: block;
-  color: var(--red);
-  text-shadow: none;
 }
 
 .enter-btn {
   position: relative;
-  border: 1px solid var(--gold);
-  background: #15070a;
+  background: #b90000;
   color: white;
-  padding: 13px 23px;
-  font-weight: 900;
+  border: 1px solid #ff3434;
+  padding: 16px 30px;
+  font-size: 15px;
+  font-weight: bold;
   letter-spacing: 2px;
-  border-radius: 3px;
   cursor: pointer;
 }
 
 .enter-btn span {
-  color: var(--gold);
-  margin-left: 10px;
+  margin-left: 12px;
 }
 
 .skip-btn {
-  position: absolute;
-  bottom: 18px;
-  right: 20px;
+  position: relative;
   background: none;
   border: 0;
   color: #aaa;
-  text-decoration: underline;
+  padding: 10px;
   cursor: pointer;
-  font-size: 12px;
 }
