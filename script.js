@@ -1,56 +1,90 @@
 
-/* INTRO */
+// ===============================
+// INTRO SECTION START
+// ===============================
 
 const intro = document.getElementById("intro");
 const enterBtn = document.getElementById("enterBtn");
-const skipBtn = document.getElementById("skipIntro");
+const skipBtn = document.getElementById("skipBtn");
 const introAudio = document.getElementById("introAudio");
 
-function closeIntro(){
+// Hide intro and show main website
+function closeIntro() {
+  intro.classList.add("hide");
 
- if(!intro) return;
+  if (introAudio) {
+    introAudio.pause();
+    introAudio.currentTime = 0;
+  }
+}
 
- intro.classList.add("hide");
+// ENTER BUTTON
+// Music starts after the user taps Enter.
+// Intro closes when the music finishes.
 
- if(introAudio){
-  introAudio.pause();
+enterBtn.addEventListener("click", function () {
+
+  if (!introAudio) {
+    closeIntro();
+    return;
+  }
+
   introAudio.currentTime = 0;
- }
-}
 
-if(enterBtn){
- enterBtn.addEventListener("click",closeIntro);
-}
+  introAudio.play()
+    .then(function () {
 
-if(skipBtn){
- skipBtn.addEventListener("click",closeIntro);
-}
+      enterBtn.disabled = true;
+      enterBtn.textContent = "WELCOME TO THE EMPIRE";
 
-/* MOBILE MENU */
+      introAudio.onended = function () {
+        closeIntro();
+      };
+
+    })
+    .catch(function () {
+
+      // If music cannot play, still enter the website.
+      closeIntro();
+
+    });
+
+});
+
+// SKIP BUTTON
+skipBtn.addEventListener("click", function () {
+  closeIntro();
+});
+
+// ===============================
+// INTRO SECTION END
+// ===============================
+
+
+// ===============================
+// MOBILE MENU START
+// ===============================
 
 const menuBtn = document.getElementById("menuBtn");
 const nav = document.getElementById("nav");
 
-if(menuBtn && nav){
+if (menuBtn && nav) {
 
- menuBtn.addEventListener("click",()=>{
+  menuBtn.addEventListener("click", function () {
+    nav.classList.toggle("show");
+  });
 
-  const opened = nav.classList.toggle("open");
+  // Close menu after selecting a link
+  nav.querySelectorAll("a").forEach(function (link) {
 
-  menuBtn.setAttribute("aria-expanded",opened);
-
- });
-
- nav.querySelectorAll("a").forEach(link=>{
-
-  link.addEventListener("click",()=>{
-
-   nav.classList.remove("open");
-
-   menuBtn.setAttribute("aria-expanded","false");
+    link.addEventListener("click", function () {
+      nav.classList.remove("show");
+    });
 
   });
 
- });
-
 }
+
+// ===============================
+// MOBILE MENU END
+// ===============================
