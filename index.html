@@ -2,634 +2,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Underground Empire — Bohee Official. Real music, real vibes, underground culture.">
-<title>Underground Empire | Bohee Official</title>
+  <!-- =========================
+       BASIC WEBSITE SETTINGS
+  ========================== -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Underground Empire — Bohee Official. Real music, real vibes, underground culture.">
+  <title>Underground Empire | Bohee Official</title>
 
-<style>
-*{box-sizing:border-box}
-
-html{
- scroll-behavior:smooth;
- scroll-padding-top:80px;
-}
-
-body{
- margin:0;
- background:#050505;
- color:#fff;
- font-family:Arial,Helvetica,sans-serif;
-}
-
-a{
- color:inherit;
- text-decoration:none;
-}
-
-em{
- color:#ed1717;
- font-style:normal;
-}
-
-/* INTRO */
-.intro{
- position:fixed;
- inset:0;
- z-index:9999;
- background:#020202;
- display:flex;
- flex-direction:column;
- align-items:center;
- justify-content:center;
- gap:25px;
- overflow:hidden;
- transition:opacity .8s ease,visibility .8s ease;
-}
-
-.intro.hide{
- opacity:0;
- visibility:hidden;
- pointer-events:none;
-}
-
-.intro-glow{
- position:absolute;
- width:280px;
- height:280px;
- border-radius:50%;
- background:#ed1717;
- filter:blur(100px);
- opacity:.25;
-}
-
-.intro-art{
- position:relative;
- width:min(65vw,300px);
- max-height:45vh;
- object-fit:contain;
- animation:spin 8s linear infinite;
-}
-
-.enter-btn{
- position:relative;
- cursor:pointer;
- border:1px solid #ed1717;
- background:#ed1717;
- color:white;
- padding:14px 28px;
- border-radius:5px;
- font-weight:bold;
- letter-spacing:1px;
-}
-
-.skip-btn{
- position:relative;
- cursor:pointer;
- background:transparent;
- color:white;
- border:1px solid #777;
- padding:9px 20px;
- border-radius:5px;
-}
-
-@keyframes spin{
- to{transform:rotate(360deg)}
-}
-
-/* HEADER */
-.topbar{
- position:sticky;
- top:0;
- z-index:100;
- background:#090909;
- padding:14px 5%;
- display:flex;
- justify-content:space-between;
- align-items:center;
- border-bottom:1px solid #292929;
-}
-
-.brand{
- display:flex;
- align-items:center;
- gap:10px;
- font-weight:bold;
-}
-
-.brand img{
- width:38px;
- height:38px;
- object-fit:contain;
-}
-
-.brand b{
- color:red;
-}
-
-.topbar nav{
- display:flex;
- gap:18px;
-}
-
-.topbar nav a:hover{
- color:red;
-}
-
-.menu-btn{
- display:none;
- background:none;
- color:white;
- border:0;
- font-size:25px;
- cursor:pointer;
-}
-
-/* HERO BANNER */
-.hero{
- position:relative;
- min-height:480px;
- display:flex;
- justify-content:center;
- align-items:center;
- text-align:center;
- overflow:hidden;
-}
-
-.hero-bg{
- position:absolute;
- inset:0;
-}
-
-.hero-bg img{
- width:100%;
- height:100%;
- object-fit:cover;
- object-position:center;
-}
-
-.hero:after{
- content:"";
- position:absolute;
- inset:0;
- background:linear-gradient(#0008,#000b);
-}
-
-.hero-inner{
- position:relative;
- z-index:1;
- padding:35px 15px;
-}
-
-.hero-crown{
- width:65px;
- animation:spin 12s linear infinite;
-}
-
-.hero h1{
- font-size:clamp(30px,6vw,60px);
-}
-
-.artist{
- letter-spacing:4px;
-}
-
-.tagline{
- font-size:13px;
- letter-spacing:2px;
-}
-
-.no-limits{
- color:#e6b94a;
-}
-
-/* QUICK LINKS */
-.tiles{
- display:grid;
- grid-template-columns:repeat(4,1fr);
- gap:15px;
- padding:25px 5%;
-}
-
-.tile{
- display:flex;
- align-items:center;
- gap:12px;
- background:#111;
- border:1px solid #292929;
- border-radius:9px;
- padding:20px;
- transition:.3s;
-}
-
-.tile:hover{
- border-color:red;
- transform:translateY(-4px);
- box-shadow:0 0 15px #ed171744;
-}
-
-.tile i{
- color:red;
- font-size:25px;
-}
-
-.tile span{
- display:grid;
- gap:5px;
-}
-
-.tile small{
- color:#999;
-}
-
-.tile strong{
- margin-left:auto;
- color:red;
-}
-
-/* CONTENT */
-.content-grid{
- display:grid;
- grid-template-columns:repeat(2,1fr);
- gap:15px;
- padding:0 5%;
-}
-
-.panel{
- background:#111;
- border:1px solid #292929;
- border-radius:9px;
- padding:20px;
-}
-
-.panel h2{
- margin-top:0;
-}
-
-.media-grid{
- display:grid;
- gap:15px;
-}
-
-.empty{
- color:#999;
-}
-
-.section{
- margin:20px 5%;
- padding:25px;
-}
-
-/* FOOTER */
-footer{
- text-align:center;
- padding:30px 15px;
- background:#090909;
- color:#aaa;
-}
-
-.footer-brand{
- color:white;
- font-weight:bold;
-}
-
-footer a{
- color:red;
-}
-
-/* MOBILE */
-@media(max-width:700px){
-
- .topbar nav{
-  display:none;
-  position:absolute;
-  top:60px;
-  left:0;
-  right:0;
-  background:#090909;
-  padding:20px;
-  flex-direction:column;
-  border-bottom:1px solid #333;
- }
-
- .topbar nav.open{
-  display:flex;
- }
-
- .menu-btn{
-  display:block;
- }
-
- .tiles{
-  grid-template-columns:repeat(2,1fr);
-  padding:15px;
- }
-
- .content-grid{
-  grid-template-columns:1fr;
-  padding:15px;
- }
-
- .hero{
-  min-height:400px;
- }
-
- .tagline{
-  font-size:11px;
-  letter-spacing:1px;
- }
-
- .artist{
-  letter-spacing:2px;
- }
-
- .tile{
-  padding:13px;
-  font-size:13px;
- }
-}
-</style>
+  <!-- CSS FILE -->
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
 
-<!-- INTRO -->
-<div class="intro" id="intro">
+  <!-- =========================
+       INTRO SECTION START
+  ========================== -->
 
- <div class="intro-glow"></div>
+  <section class="intro" id="intro">
 
- <img
- class="intro-art"
- src="./Crown.png"
- alt="Underground Empire Crown"
- >
+    <img src="./Crown.png" class="intro-crown" alt="Crown">
 
- <button class="enter-btn" id="enterBtn">
- ENTER THE EMPIRE ➜
- </button>
+    <h1 class="intro-title">
+      UNDERGROUND <span>EMPIRE</span>
+    </h1>
 
- <button class="skip-btn" id="skipIntro">
- Skip intro
- </button>
+    <!-- INTRO PICTURE -->
+    <div class="intro-picture">
+      <img src="./Bohee.jpg" alt="Bohee Official">
+    </div>
 
-</div>
+    <p class="intro-subtitle">WELCOME TO THE EMPIRE</p>
 
-<audio
- id="introAudio"
- src="./intro.mp3"
- preload="auto">
-</audio>
+    <!-- ENTER BUTTON -->
+    <button id="enterBtn" class="enter-btn">
+      ENTER THE EMPIRE
+      <span>➜</span>
+    </button>
 
-<!-- HEADER -->
-<header class="topbar">
+    <!-- SKIP BUTTON -->
+    <button id="skipBtn" class="skip-btn">
+      SKIP INTRO <span>»</span>
+    </button>
 
- <a class="brand" href="#home">
+  </section>
 
-  <img src="./Crown.png" alt="Crown">
+  <!-- INTRO MUSIC -->
+  <audio id="introAudio" src="./intro.mp3" preload="auto"></audio>
 
-  <span>
-   UNDERGROUND <b>EMPIRE</b>
-  </span>
+  <!-- =========================
+       INTRO SECTION END
+  ========================== -->
 
- </a>
 
- <button
- class="menu-btn"
- id="menuBtn"
- aria-label="Open menu"
- aria-expanded="false">
- ☰
- </button>
+  <!-- =========================
+       MAIN WEBSITE START
+  ========================== -->
 
- <nav id="nav">
-  <a href="#home">Home</a>
-  <a href="#songs">MP3 Songs</a>
-  <a href="#videos">Videos</a>
-  <a href="#shorts">Shorts</a>
-  <a href="#photos">Gallery</a>
-  <a href="#upcoming">Upcoming</a>
-  <a href="#about">About</a>
- </nav>
+  <div id="mainWebsite" class="main-website">
 
-</header>
+    <!-- HEADER -->
+    <header class="header">
 
-<main id="home">
+      <a href="#home" class="brand">
+        <img src="./Crown.png" alt="Crown">
+        <span>UNDERGROUND <b>EMPIRE</b></span>
+      </a>
 
-<!-- HERO BANNER -->
-<section class="hero">
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+        ☰
+      </button>
 
- <div class="hero-bg">
-  <img src="./Bohee.jpg" alt="Bohee Official Banner">
- </div>
+      <nav class="nav" id="nav">
+        <a href="#home">Home</a>
+        <a href="#songs">MP3 Songs</a>
+        <a href="#videos">Videos</a>
+        <a href="#shorts">Shorts</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#upcoming">Upcoming</a>
+        <a href="#about">About</a>
+      </nav>
 
- <div class="hero-inner">
+    </header>
 
-  <img
-  class="hero-crown"
-  src="./Crown.png"
-  alt="Crown">
+    <!-- =========================
+         BANNER SECTION START
+    ========================== -->
 
-  <p class="eyebrow">PRESENTS</p>
+    <section class="hero" id="home">
 
-  <h1>
-   UNDERGROUND <em>EMPIRE</em>
-  </h1>
+      <div class="hero-content">
 
-  <p class="artist">
-   BOHEE VEXER &amp; FLEXER
-  </p>
+        <h1>
+          UNDERGROUND
+          <span>EMPIRE</span>
+        </h1>
 
-  <p class="tagline">
-   REAL MUSIC / REAL VIBES / UNDERGROUND CULTURE
-  </p>
+        <p class="artist-name">BOHEE OFFICIAL</p>
 
-  <strong class="no-limits">
-   — NO LIMITS —
-  </strong>
+        <div class="hero-photo">
+          <img src="./Bohee.jpg" alt="Bohee Official Banner">
+        </div>
 
- </div>
+        <p class="tagline">
+          REAL MUSIC / REAL VIBES / UNDERGROUND CULTURE
+        </p>
 
-</section>
+        <p class="no-limits">NO LIMITS</p>
 
-<!-- QUICK LINKS -->
-<section class="tiles">
+      </div>
 
- <a class="tile" href="#songs">
-  <i>♫</i>
-  <span>
-   <small>THE SOUND</small>
-   <b>MP3 SONGS</b>
-  </span>
-  <strong>›</strong>
- </a>
+    </section>
 
- <a class="tile" href="#videos">
-  <i>▶</i>
-  <span>
-   <small>WATCH</small>
-   <b>OFFICIAL VIDEOS</b>
-  </span>
-  <strong>›</strong>
- </a>
+    <!-- BANNER SECTION END -->
 
- <a class="tile" href="#shorts">
-  <i>ϟ</i>
-  <span>
-   <small>QUICK WATCH</small>
-   <b>SHORT VIDEOS</b>
-  </span>
-  <strong>›</strong>
- </a>
 
- <a class="tile" href="#photos">
-  <i>▧</i>
-  <span>
-   <small>THE GALLERY</small>
-   <b>PHOTO GALLERY</b>
-  </span>
-  <strong>›</strong>
- </a>
+    <!-- QUICK LINKS -->
+    <section class="quick-links">
 
-</section>
+      <a href="#songs" class="quick-card">MP3 SONGS</a>
+      <a href="#videos" class="quick-card">OFFICIAL VIDEOS</a>
+      <a href="#shorts" class="quick-card">SHORT VIDEOS</a>
+      <a href="#gallery" class="quick-card">PHOTO GALLERY</a>
 
-<!-- SONGS AND VIDEOS -->
-<div class="content-grid">
+    </section>
 
- <section class="panel" id="songs">
 
-  <h2>LATEST <em>RELEASES</em></h2>
+    <!-- =========================
+         SONGS SECTION START
+    ========================== -->
 
-  <div id="public-audio" class="media-grid">
-   <p class="empty">Your songs will appear here.</p>
+    <section class="content-section" id="songs">
+      <h2>MP3 <span>SONGS</span></h2>
+      <p class="section-description">Listen to official music.</p>
+
+      <div class="content-placeholder">
+        Songs will appear here.
+      </div>
+    </section>
+
+    <!-- SONGS SECTION END -->
+
+
+    <!-- =========================
+         VIDEOS SECTION START
+    ========================== -->
+
+    <section class="content-section" id="videos">
+      <h2>OFFICIAL <span>VIDEOS</span></h2>
+      <div class="content-placeholder">
+        Official videos will appear here.
+      </div>
+    </section>
+
+    <!-- VIDEOS SECTION END -->
+
+
+    <!-- =========================
+         SHORTS SECTION START
+    ========================== -->
+
+    <section class="content-section" id="shorts">
+      <h2>SHORT <span>VIDEOS</span></h2>
+      <div class="content-placeholder">
+        Short videos will appear here.
+      </div>
+    </section>
+
+    <!-- SHORTS SECTION END -->
+
+
+    <!-- =========================
+         GALLERY SECTION START
+    ========================== -->
+
+    <section class="content-section" id="gallery">
+      <h2>PHOTO <span>GALLERY</span></h2>
+      <div class="content-placeholder">
+        Pictures will appear here.
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION END -->
+
+
+    <!-- UPCOMING SECTION -->
+    <section class="content-section" id="upcoming">
+      <h2>UPCOMING <span>PROJECTS</span></h2>
+      <div class="content-placeholder">
+        Upcoming projects will appear here.
+      </div>
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="content-section" id="about">
+      <h2>ABOUT <span>US</span></h2>
+      <p>
+        Underground Empire — Bohee Official.
+        Real Music. Real Vibes. Underground Culture.
+      </p>
+    </section>
+
+
+    <!-- =========================
+         FOOTER SECTION START
+    ========================== -->
+
+    <footer class="footer">
+
+      <div class="footer-brand">
+        <img src="./Crown.png" alt="Crown">
+        <span>UNDERGROUND EMPIRE</span>
+      </div>
+
+      <p>BOHEE OFFICIAL</p>
+
+      <div class="social-links">
+        <a href="https://youtube.com/@boheeofficial" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://spotify.com/" target="_blank" rel="noopener">Spotify</a>
+      </div>
+
+      <p class="copyright">
+        © 2012-2026 Underground Empire. All Rights Reserved.
+      </p>
+
+    </footer>
+
+    <!-- FOOTER SECTION END -->
+
   </div>
 
- </section>
+  <!-- MAIN WEBSITE END -->
 
- <section class="panel" id="videos">
-
-  <h2>OFFICIAL <em>VIDEOS</em></h2>
-
-  <div id="public-videos" class="media-grid">
-   <p class="empty">Your videos will appear here.</p>
-  </div>
-
- </section>
-
-</div>
-
-<!-- SHORTS -->
-<section class="panel section" id="shorts">
-
- <h2>SHORTS <em>VIDEOS</em></h2>
-
- <p>Quick clips. Big vibes.</p>
-
-</section>
-
-<!-- GALLERY -->
-<section class="panel section" id="photos">
-
- <h2>PHOTO <em>GALLERY</em></h2>
-
- <div id="public-photos" class="media-grid">
-  <p class="empty">Your photos will appear here.</p>
- </div>
-
-</section>
-
-<!-- UPCOMING -->
-<section class="panel section" id="upcoming">
-
- <h2>COMING <em>SOON</em></h2>
-
- <p>
-  New releases and announcements will appear here.
- </p>
-
-</section>
-
-<!-- ABOUT -->
-<section class="panel section" id="about">
-
- <h2>ABOUT <em>THE EMPIRE</em></h2>
-
- <p>
-  Underground Empire — real music, real vibes, underground culture.
- </p>
-
-</section>
-
-</main>
-
-<!-- FOOTER -->
-<footer>
-
- <div class="footer-brand">
-  ♛ UNDERGROUND <em>EMPIRE</em>
- </div>
-
- <p>Bohee Vexer &amp; Flexer</p>
-
- <p>
-  © 2012–2026 Underground Empire. All Rights Reserved.
- </p>
-
- <a href="admin.html">Admin Login</a>
-
-</footer>
-
-<!-- JAVASCRIPT -->
-<script>
-
-const intro = document.getElementById("intro");
-const enterBtn = document.getElementById("enterBtn");
-const skipBtn = document.getElementById("skipIntro");
-const introAudio = document.getElementById("introAudio");
-
-function closeIntro(){
-
- intro.classList.add("hide");
-
- introAudio.pause();
-
-}
-
-enterBtn.addEventListener("click",()=>{
-
- introAudio.play().catch(()=>{});
-
- closeIntro();
-
-});
-
-skipBtn.addEventListener("click",closeIntro);
-
-/* MOBILE MENU */
-
-const menuBtn = document.getElementById("menuBtn");
-const nav = document.getElementById("nav");
-
-menuBtn.addEventListener("click",()=>{
-
- const opened = nav.classList.toggle("open");
-
- menuBtn.setAttribute("aria-expanded",opened);
-
-});
-
-nav.querySelectorAll("a").forEach(link=>{
-
- link.addEventListener("click",()=>{
-
-  nav.classList.remove("open");
-
-  menuBtn.setAttribute("aria-expanded","false");
-
- });
-
-});
-
-</script>
+  <!-- JAVASCRIPT FILE -->
+  <script src="./script.js"></script>
 
 </body>
 </html>
