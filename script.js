@@ -1,43 +1,44 @@
-
-(() => {
+<script>
+(function(){
   const intro = document.getElementById("intro");
   const audio = document.getElementById("introAudio");
   const enterBtn = document.getElementById("enterBtn");
   const skipBtn = document.getElementById("skipIntro");
-
   const menuBtn = document.getElementById("menuBtn");
   const nav = document.getElementById("nav");
 
-  let introOpened = false;
+  let closed = false;
 
-  function openWebsite() {
-    if (introOpened) return;
-    introOpened = true;
-
-    if (intro) {
-      intro.classList.add("hidden");
-    }
-    audio?.pause();
+  function closeIntro(){
+    if(closed) return;
+    closed = true;
+    intro.classList.add("hidden");
+    audio.pause();
   }
 
-  // Enter button
-  enterBtn?.addEventListener("click", () => {
-    openWebsite();
+  enterBtn.addEventListener("click", function(){
+    if(closed) return;
+    audio.currentTime = 0;
+    audio.play().catch(function(error){
+      console.log("Audio could not play:", error);
+    });
+    closeIntro();
   });
 
-  // Skip button
-  skipBtn?.addEventListener("click", () => {
-    openWebsite();
+  skipBtn.addEventListener("click", closeIntro);
+
+  setTimeout(closeIntro, 2000);
+
+  menuBtn.addEventListener("click", function(){
+    const opened = nav.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", String(opened));
   });
 
-  // Automatic opening after 2 seconds
-  if (intro) {
-    setTimeout(openWebsite, 2000);
-  }
-
-  // Mobile menu
-  menuBtn?.addEventListener("click", () => {
-    const isOpen = nav?.classList.toggle("open");
-    menuBtn.setAttribute("aria-expanded", String(!!isOpen));
+  nav.querySelectorAll("a").forEach(function(link){
+    link.addEventListener("click", function(){
+      nav.classList.remove("open");
+      menuBtn.setAttribute("aria-expanded","false");
+    });
   });
 })();
+</script>
