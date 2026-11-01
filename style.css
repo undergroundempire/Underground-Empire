@@ -66,10 +66,11 @@ footer{text-align:center;padding:35px 15px;color:#aaa;border-top:1px solid #4410
 footer a{color:var(--gold)}
 
 /* INTRO */
-.intro{
-position:fixed;inset:0;z-index:100;background:#020202;
-display:flex;flex-direction:column;align-items:center;justify-content:center;
-transition:opacity .55s ease,visibility .55s ease
+.intro-art {
+  width: 230px !important;
+  height: 190px !important;
+  object-fit: contain;
+  margin-bottom: 35px !important;
 }
 .intro.hidden{opacity:0;visibility:hidden;pointer-events:none}
 .intro-glow{
