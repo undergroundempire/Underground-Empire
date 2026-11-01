@@ -158,3 +158,13 @@ color:#bbb;font-size:10px;font-weight:700;letter-spacing:1.2px;cursor:pointer
   visibility: hidden;
   pointer-events: none;
 }
+
+/* INTRO LOGO SIZE FINAL FIX */
+.intro img.intro-art {
+  width: 300px !important;
+  height: 240px !important;
+  max-width: 85vw !important;
+  object-fit: contain !important;
+  margin-bottom: 35px !important;
+}
+
