@@ -64,8 +64,8 @@ button {
 /* INTRO CROWN - NO ROTATION */
 
 .intro-crown {
-  width: 75px;
-  height: 75px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
   animation: none;
   transform: none;
@@ -122,18 +122,18 @@ button {
 /* ENTER BUTTON */
 
 .enter-btn {
-  margin-top: 8px;
+  margin-top: 5px;
   padding: 14px 28px;
   border: 1px solid #ff2222;
-  border-radius: 5px;
+  border-radius: 3px;
   background: linear-gradient(135deg, #b90000, #350000);
   color: #fff;
-  font-size: 14px;
+  font-size: 10px;
   font-weight: bold;
   letter-spacing: 2px;
   cursor: pointer;
   box-shadow: 0 0 15px rgba(255,0,0,.3);
-  transition: .3s;
+  transition: .2s;
 }
 
 .enter-btn span {
