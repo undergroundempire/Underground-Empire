@@ -1,157 +1,520 @@
 
-*{box-sizing:border-box}
-:root{--red:#ff1738;--gold:#eab94d}
-html{scroll-behavior:smooth;scroll-padding-top:78px}
-body{margin:0;background:#050505;color:#f5f5f5;font-family:Arial,Helvetica,sans-serif}
-a{color:inherit;text-decoration:none}
+/* ==================================================
+   UNDERGROUND EMPIRE
+   COMPLETE STYLE.CSS
+   GROUP 1 TO GROUP 8
+================================================== */
 
-.topbar{
-height:70px;position:sticky;top:0;z-index:20;
-background:#070707;border-bottom:1px solid #57101d;
-display:flex;align-items:center;justify-content:space-between;
-padding:8px 4%;gap:18px
-}
-.brand{display:flex;align-items:center;gap:9px;font-weight:900;letter-spacing:1px}
-.brand img{width:42px;height:42px;object-fit:contain;animation:spin 12s linear infinite}
-.brand b{color:var(--red)}
-.admin-login{
-margin-left:auto;padding:10px 17px;border:1px solid var(--red);
-border-radius:999px;color:#fff;font-size:12px;font-weight:800;
-letter-spacing:1.5px;box-shadow:0 0 12px #ff173855
-}
-.admin-login:hover{background:#300008;box-shadow:0 0 20px #ff1738}
 
-.hero{
-min-height:430px;position:relative;display:grid;place-items:center;
-overflow:hidden;border-bottom:1px solid var(--gold);
-background:radial-gradient(ellipse at 70% 35%,#54101b,#120609 52%,#030303 85%)
-}
-.hero-bg{
-position:absolute;inset:0;
-background-image:linear-gradient(90deg,#050505b0,#05050555),url('bohee.jpg');
-background-position:center;background-size:contain;background-repeat:no-repeat;
-opacity:.95
-}
-.hero-inner{position:relative;text-align:center;padding:55px 16px 65px;text-shadow:0 3px 15px #000}
-.hero-crown{width:72px;height:72px;object-fit:contain;animation:spin 14s linear infinite;filter:drop-shadow(0 0 14px #e6a91b)}
-.eyebrow{color:var(--gold);letter-spacing:5px;margin:8px}
-.hero h1{font-size:clamp(36px,7vw,76px);line-height:1;margin:10px 0;font-weight:1000;letter-spacing:2px}
-.hero h1 em,.panel h2 em,.footer-brand em{font-style:normal;color:var(--red);text-shadow:0 0 18px #9b0018}
-.artist{letter-spacing:4px;color:#ddd}
-.tagline{font-size:clamp(12px,2vw,17px);letter-spacing:2px;color:var(--gold);margin-top:35px}
-.no-limits{display:block;color:white;letter-spacing:5px;margin-top:10px}
+/* ==================================================
+   GROUP 1: GLOBAL SETTINGS START
+================================================== */
 
-.tiles{max-width:1150px;margin:28px auto;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;padding:0 18px}
-.tile{
-min-height:110px;border:1px solid #6f1222;
-background:linear-gradient(110deg,#230b10,#090909);
-box-shadow:inset 0 0 20px #41000c;
-display:flex;align-items:center;gap:16px;padding:18px;
-border-radius:7px;transition:.2s
+* {
+  box-sizing: border-box;
 }
-.tile:hover{border-color:var(--gold);transform:translateY(-2px)}
-.tile i{font-style:normal;font-size:38px;color:var(--red)}
-.tile small{display:block;color:var(--gold);letter-spacing:2px;font-size:10px}
-.tile b{font-size:clamp(18px,3vw,28px)}
-.tile>strong{margin-left:auto;color:var(--gold);font-size:28px}
 
-.content-grid{max-width:1150px;margin:auto;padding:0 18px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.panel{background:#0b0b0b;border:1px solid #352126;border-radius:7px;padding:18px}
-.panel h2{font-size:23px;margin:0 0 15px}
-.section{max-width:1114px;margin:16px auto;padding:20px}
-.media-grid{display:grid;gap:10px}
-.empty{color:#888;font-size:13px}
-footer{text-align:center;padding:35px 15px;color:#aaa;border-top:1px solid #44101a;margin-top:35px}
-.footer-brand{font-weight:900;letter-spacing:2px}
-footer a{color:var(--gold)}
+:root {
+  --red: #ff1738;
+  --dark-red: #8b0018;
+  --gold: #eab94d;
+  --black: #050505;
+  --white: #ffffff;
+}
 
-/* INTRO */
-.intro-art {
-  width: 230px !important;
-  height: 190px !important;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* GROUP 1 END */
+
+
+/* ==================================================
+   GROUP 2: HEADER START
+================================================== */
+
+.topbar {
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: #070707;
+  border-bottom: 1px solid #57101d;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 8px 4%;
+  gap: 18px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.brand img {
+  width: 42px;
+  height: 42px;
   object-fit: contain;
-  margin-bottom: 35px !important;
+  animation: crownSpin 12s linear infinite;
 }
-.intro.hidden{opacity:0;visibility:hidden;pointer-events:none}
-.intro-glow{
-position:absolute;inset:0;
-background:radial-gradient(ellipse,#26070d 0%,#100508 45%,#020202 78%);
-pointer-events:none
-}
-.intro-art{
-position:relative;width:min(42vw,190px);height:min(26vh,190px);
-object-fit:contain;filter:drop-shadow(0 0 24px #a51a2e);
-margin-bottom:48px
-}
-.enter-btn{
-position:relative;display:flex;align-items:center;justify-content:center;
-gap:28px;width:min(78vw,330px);min-height:66px;padding:13px 25px;
-border:1px solid #ff303f;border-radius:999px;
-background:linear-gradient(110deg,#ed101c,#4b0009);
-color:#fff;font-size:clamp(18px,4vw,24px);font-weight:900;
-letter-spacing:3px;cursor:pointer;
-box-shadow:0 0 12px #ff1738,0 0 32px #a00020,inset 0 0 12px #ff7a7a55;
-transform:translateY(28px);transition:transform .25s,box-shadow .25s
-}
-.enter-btn:hover{transform:translateY(25px) scale(1.03);box-shadow:0 0 18px #ff1738,0 0 42px #a00020}
-.enter-arrow{font-size:27px;color:#fff;text-shadow:0 0 10px #fff;animation:arrowPulse 1s ease-in-out infinite alternate}
 
-.skip-btn{
-position:absolute;right:16px;bottom:22px;padding:7px 12px;
-border:1px solid #5b3035;border-radius:999px;background:#111;
-color:#bbb;font-size:10px;font-weight:700;letter-spacing:1.2px;cursor:pointer
+.brand b {
+  color: var(--red);
 }
-.skip-btn span{color:var(--red);margin-left:4px}
 
-@keyframes arrowPulse{to{transform:translateX(5px);text-shadow:0 0 15px #ff4050}}
-@keyframes spin{to{transform:rotate(360deg)}}
+.admin-login {
+  margin-left: auto;
+  padding: 10px 17px;
 
-@media(max-width:800px){
-.topbar{height:62px}
-.hero{min-height:390px}
-.content-grid{grid-template-columns:1fr}
-.section{margin:14px 18px}
-.hero-bg{background-size:contain;background-position:center 48%}
+  border: 1px solid var(--red);
+  border-radius: 50px;
+
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+
+  box-shadow: 0 0 12px #ff173855;
 }
-@media(max-width:520px){
-.tiles{grid-template-columns:1fr}
-.hero{min-height:360px}
-.hero-inner{padding:45px 10px 55px}
-.tagline{letter-spacing:1px}
-.intro-art{width:155px;height:155px;margin-bottom:40px}
-.enter-btn{min-height:60px;width:76vw;transform:translateY(24px)}
-.enter-btn:hover{transform:translateY(21px) scale(1.02)}
-.brand{font-size:13px}
-.admin-login{font-size:10px;padding:9px 12px}
+
+.admin-login:hover {
+  background: #300008;
+  box-shadow: 0 0 20px var(--red);
 }
-/* INTRO FIX */
-.intro-art {
-  width: 135px !important;
-  height: 115px !important;
+
+/* GROUP 2 END */
+
+
+/* ==================================================
+   GROUP 3: MAIN BANNER START
+================================================== */
+
+.hero {
+  min-height: 430px;
+  position: relative;
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+
+  border-bottom: 1px solid var(--gold);
+
+  background:
+    radial-gradient(
+      ellipse at 70% 35%,
+      #54101b,
+      #120609 52%,
+      #030303 85%
+    );
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(90deg, #05050588, #05050533),
+    url("bohee.jpg");
+
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  opacity: .95;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+
+  text-align: center;
+  padding: 55px 16px 65px;
+
+  text-shadow: 0 3px 15px #000;
+}
+
+.hero-crown {
+  width: 72px;
+  height: 72px;
+
   object-fit: contain;
-  margin-bottom: 28px !important;
+
+  animation: crownSpin 14s linear infinite;
+
+  filter: drop-shadow(0 0 14px #e6a91b);
 }
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 5px;
+  margin: 8px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 7vw, 76px);
+  line-height: 1;
+  margin: 10px 0;
+
+  font-weight: 1000;
+  letter-spacing: 2px;
+}
+
+.hero h1 em,
+.panel h2 em,
+.footer-brand em {
+  font-style: normal;
+  color: var(--red);
+  text-shadow: 0 0 18px #9b0018;
+}
+
+.artist {
+  letter-spacing: 4px;
+  color: #ddd;
+}
+
+.tagline {
+  font-size: clamp(12px, 2vw, 17px);
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-top: 35px;
+}
+
+.no-limits {
+  display: block;
+  color: white;
+  letter-spacing: 5px;
+  margin-top: 10px;
+}
+
+/* GROUP 3 END */
+
+
+/* ==================================================
+   GROUP 4: NAVIGATION CARDS START
+================================================== */
+
+.tiles {
+  max-width: 1150px;
+  margin: 28px auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+
+  padding: 0 18px;
+}
+
+.tile {
+  min-height: 110px;
+
+  border: 1px solid #6f1222;
+  border-radius: 12px;
+
+  background: linear-gradient(
+    110deg,
+    #230b10,
+    #090909
+  );
+
+  box-shadow: inset 0 0 20px #41000c;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  padding: 18px;
+
+  transition: .25s ease;
+}
+
+.tile:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px #ff173855;
+}
+
+.tile i {
+  font-style: normal;
+  font-size: 38px;
+  color: var(--red);
+}
+
+.tile small {
+  display: block;
+  color: var(--gold);
+  letter-spacing: 2px;
+  font-size: 10px;
+}
+
+.tile b {
+  font-size: clamp(18px, 3vw, 28px);
+}
+
+.tile > strong {
+  margin-left: auto;
+  color: var(--gold);
+  font-size: 28px;
+}
+
+/* GROUP 4 END */
+
+
+/* ==================================================
+   GROUP 5: SONGS VIDEOS GALLERY START
+================================================== */
+
+.content-grid {
+  max-width: 1150px;
+  margin: auto;
+
+  padding: 0 18px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.panel {
+  background: #0b0b0b;
+  border: 1px solid #352126;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.panel h2 {
+  font-size: 23px;
+  margin: 0 0 15px;
+}
+
+.media-grid {
+  display: grid;
+  gap: 10px;
+}
+
+.empty {
+  color: #888;
+  font-size: 13px;
+}
+
+.section {
+  max-width: 1114px;
+  margin: 16px auto;
+  padding: 20px;
+}
+
+/* GROUP 5 END */
+
+
+/* ==================================================
+   GROUP 6: FOOTER START
+================================================== */
+
+footer {
+  text-align: center;
+  padding: 35px 15px;
+
+  color: #aaa;
+
+  border-top: 1px solid #44101a;
+  margin-top: 35px;
+}
+
+.footer-brand {
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+footer p {
+  font-size: 13px;
+}
+
+footer a {
+  color: var(--gold);
+}
+
+/* GROUP 6 END */
+
+
+/* ==================================================
+   GROUP 7: INTRO SCREEN START
+================================================== */
+
+.intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+
+  background: #020202;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  transition:
+    opacity .55s ease,
+    visibility .55s ease;
+}
+
+.intro-glow {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      ellipse,
+      #26070d 0%,
+      #100508 45%,
+      #020202 78%
+    );
+
+  pointer-events: none;
+}
+
+/* INTRO LOGO SIZE */
+
+.intro img.intro-art {
+  position: relative;
+  z-index: 2;
+
+  display: block;
+
+  width: 300px !important;
+  height: 260px !important;
+
+  max-width: 88vw !important;
+
+  object-fit: contain !important;
+
+  margin: 0 auto 35px auto !important;
+
+  filter: drop-shadow(0 0 24px #ff1738);
+}
+
+/* ENTER BUTTON */
 
 .enter-btn {
   position: relative;
-  transform: none !important;
-  border-radius: 50px !important;
-  min-height: 58px;
-  width: min(78vw, 320px);
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 28px;
+
+  width: min(78vw, 330px);
+  min-height: 66px;
+
+  padding: 13px 25px;
+
+  border: 1px solid #ff303f;
+  border-radius: 50px;
+
+  background: linear-gradient(
+    110deg,
+    #ed101c,
+    #4b0009
+  );
+
+  color: #fff;
+
+  font-size: clamp(18px, 4vw, 24px);
+  font-weight: 900;
+  letter-spacing: 3px;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 0 12px #ff1738,
+    0 0 32px #a00020,
+    inset 0 0 12px #ff7a7a55;
+
+  transition: .3s ease;
 }
+
+.enter-btn:hover {
+  transform: scale(1.04);
+
+  box-shadow:
+    0 0 20px #ff1738,
+    0 0 42px #a00020;
+}
+
+.enter-arrow {
+  font-size: 27px;
+  color: white;
+
+  text-shadow: 0 0 10px white;
+
+  animation: arrowPulse 1s ease-in-out infinite alternate;
+}
+
+/* SKIP INTRO BUTTON */
 
 .skip-btn {
   position: fixed !important;
+
   right: 14px !important;
   bottom: 20px !important;
+
   left: auto !important;
   top: auto !important;
-  width: auto !important;
-  padding: 7px 12px !important;
-  font-size: 10px !important;
-  border-radius: 30px !important;
+
   z-index: 110 !important;
+
+  width: auto !important;
+
+  padding: 8px 13px !important;
+
+  border: 1px solid #5b3035;
+  border-radius: 50px;
+
+  background: #111;
+
+  color: #bbb;
+
+  font-size: 10px !important;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+
+  cursor: pointer;
 }
+
+.skip-btn span {
+  color: var(--red);
+  margin-left: 4px;
+}
+
+/* INTRO HIDE EFFECT */
 
 .intro.hidden {
   opacity: 0;
@@ -159,12 +522,136 @@ color:#bbb;font-size:10px;font-weight:700;letter-spacing:1.2px;cursor:pointer
   pointer-events: none;
 }
 
-/* INTRO LOGO SIZE FINAL FIX */
-.intro img.intro-art {
-  width: 300px !important;
-  height: 240px !important;
-  max-width: 85vw !important;
-  object-fit: contain !important;
-  margin-bottom: 35px !important;
+/* GROUP 7 END */
+
+
+/* ==================================================
+   GROUP 8: ANIMATIONS START
+================================================== */
+
+@keyframes crownSpin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
 
+@keyframes arrowPulse {
+  from {
+    transform: translateX(0);
+    text-shadow: 0 0 6px white;
+  }
+
+  to {
+    transform: translateX(5px);
+    text-shadow: 0 0 18px #ff4050;
+  }
+}
+
+/* GROUP 8 END */
+
+
+/* ==================================================
+   GROUP 9: TABLET RESPONSIVE START
+================================================== */
+
+@media (max-width: 800px) {
+
+  .topbar {
+    height: 62px;
+  }
+
+  .hero {
+    min-height: 390px;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    margin: 14px 18px;
+  }
+
+  .hero-bg {
+    background-size: contain;
+    background-position: center 48%;
+  }
+
+}
+
+/* GROUP 9 END */
+
+
+/* ==================================================
+   GROUP 10: MOBILE RESPONSIVE START
+================================================== */
+
+@media (max-width: 520px) {
+
+  .topbar {
+    padding: 8px 12px;
+  }
+
+  .brand {
+    font-size: 13px;
+  }
+
+  .brand img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .admin-login {
+    font-size: 10px;
+    padding: 9px 12px;
+  }
+
+  .tiles {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 360px;
+  }
+
+  .hero-inner {
+    padding: 45px 10px 55px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 9vw, 48px);
+  }
+
+  .tagline {
+    letter-spacing: 1px;
+  }
+
+  .intro img.intro-art {
+    width: 300px !important;
+    height: 250px !important;
+    max-width: 88vw !important;
+    margin-bottom: 30px !important;
+  }
+
+  .enter-btn {
+    min-height: 60px;
+    width: 78vw;
+  }
+
+  .skip-btn {
+    right: 12px !important;
+    bottom: 18px !important;
+  }
+
+}
+
+/* GROUP 10 END */
+
+
+/* ==================================================
+   UNDERGROUND EMPIRE CSS COMPLETE
+================================================== */
